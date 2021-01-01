@@ -11,3 +11,15 @@ author={Zheng, Sixiao and Lu, Jiachen and Zhao, Hengshuang and Zhu, Xiatian and 
 journal={arxiv preprint arXiv:2012.15840},
 }
 ```
+
+
+# License
+MIT License
+
+
+# Acknowledgement
+
+Thanks to previous open-sourced repo:  
+[mmsegmentation](https://github.com/open-mmlab/mmsegmentation)    
+[ViT-pytorch](https://github.com/jeonsworld/ViT-pytorch)   
+[pytorch-image-models](https://github.com/rwightman/pytorch-image-models)  
