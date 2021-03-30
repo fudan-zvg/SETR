@@ -6,13 +6,12 @@
 
 
 ```bibtex
-@misc{SETR,
+@inproceedings{SETR,
     title={Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers}, 
     author={Zheng, Sixiao and Lu, Jiachen and Zhao, Hengshuang and Zhu, Xiatian and Luo, Zekun and Wang, Yabiao and Fu, Yanwei and Feng, Jianfeng and Xiang, Tao and Torr, Philip H.S. and Zhang, Li},
-    year={2020},
-    eprint={2012.15840},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+    booktitle={CVPR},
+    year={2021}
+    
 }
 ```
 
