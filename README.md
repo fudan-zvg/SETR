@@ -98,6 +98,8 @@ Please see [getting_started.md](docs/getting_started.md) for the more basic usag
 
 ## License
 
+MIT
+
 
 ## Acknowledgement
 
