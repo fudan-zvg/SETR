@@ -1,6 +1,6 @@
 # SEgmentation TRansformers -- SETR
 
-![image-20210323193642636](README.assets/image-20210323193642636.png)
+![image](fig/image.png)
 
 [Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers](https://arxiv.org/abs/2012.15840)
 
