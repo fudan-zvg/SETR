@@ -68,7 +68,6 @@ Please see [getting_started.md](docs/getting_started.md) for the basic usage of 
     author={Zheng, Sixiao and Lu, Jiachen and Zhao, Hengshuang and Zhu, Xiatian and Luo, Zekun and Wang, Yabiao and Fu, Yanwei and Feng, Jianfeng and Xiang, Tao and Torr, Philip H.S. and Zhang, Li},
     booktitle={CVPR},
     year={2021}
-    
 }
 ```
 
