@@ -38,17 +38,17 @@ Our project is developed based on [mmsegmentation](https://github.com/open-mmlab
 
 | Method   | Crop Size | Batch size | iteration | set  | mIoU  |                           | 
 | -------- | --------- | ---------- | --------- | ---- | ----- | -----------------------   |
-| SETR-MLA | 512x512   | 8          | 160k      | val  |       |   [model]()[config]()     | 
-| SETR-MLA | 512x512   | 16         | 160k      | val  |       |   [model]()[config]()     | 
-| SETR-PUP | 512x512   | 16         | 160k      | val  |       |   [model]()[config]()     | 
+| SETR-MLA | 512x512   | 8          | 160k      | val  |       |   [model]() [config]()     | 
+| SETR-MLA | 512x512   | 16         | 160k      | val  |       |   [model]() [config]()     | 
+| SETR-PUP | 512x512   | 16         | 160k      | val  |       |   [model]() [config]()     | 
 
 #### Pascal Context
 
 | Method   | Crop Size | Batch size | iteration | set  | mIoU  |                           | 
 | -------- | --------- | ---------- | --------- | ---- | ----- | -----------------------   |
-| SETR-MLA | 480x480   | 8          | 80k       | val  |       |   [model]()[config]()     | 
-| SETR-MLA | 480x480   | 16         | 80k       | val  |       |   [model]()[config]()     | 
-| SETR-PUP | 480x480   | 16         | 80k       | val  |       |   [model]()[config]()     | 
+| SETR-MLA | 480x480   | 8          | 80k       | val  |       |   [model]() [config]()     | 
+| SETR-MLA | 480x480   | 16         | 80k       | val  |       |   [model]() [config]()     | 
+| SETR-PUP | 480x480   | 16         | 80k       | val  |       |   [model]() [config]()     | 
 
 
 
