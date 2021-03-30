@@ -77,7 +77,7 @@ Use the config file ending in `_MS.py` in `configs/SETR`.
 
 ```shell
 ./tools/dist_test.sh ${CONFIG_FILE} ${CHECKPOINT_FILE} ${GPU_NUM}  [--eval ${EVAL_METRICS}]
-# For example, test a SETR-PUP on Cityscapes dataset with 8 V100.
+# For example, test a SETR-PUP on Cityscapes dataset with 8 GPUs
 ./tools/dist_test.sh configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8_MS.py \
 work_dirs/SETR_PUP_768x768_40k_cityscapes_bs_8/iter_40000.pth \
 8 --eval mIoU
