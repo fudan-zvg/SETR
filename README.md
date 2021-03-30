@@ -1,11 +1,66 @@
 # SEgmentation TRansformers -- SETR
 
+![image-20210323193642636](README.assets/image-20210323193642636.png)
+
 [Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers](https://arxiv.org/abs/2012.15840)
-Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip H.S. Torr, Li Zhang
+
 CVPR 2021
 
-# Reference 
 
+## Installation
+
+Our project is developed based on [mmsegmentation](https://github.com/open-mmlab/mmsegmentation). Please follow the official mmsegmentation [INSTALL.md](docs/install.md) for installation and dataset preparation.
+
+
+
+
+## Main results
+
+
+#### Cityscapes
+
+| Method     | Crop Size | Batch size | iteration | set  | mIoU  |                          | 
+| ---------- | --------- | ---------- | --------- | ---- | ----- | -----------------------  |
+| SETR-Naive | 768x768   | 8          | 40k       | val  |       |  [model]() [config]()     | 
+| SETR-Naive | 768x768   | 8          | 80k       | val  |       |  [model]() [config]()     | 
+| SETR-MLA   | 768x768   | 8          | 40k       | val  |       |  [model]() [config]()     | 
+| SETR-MLA   | 768x768   | 8          | 80k       | val  |       |  [model]() [config]()     | 
+| SETR-PUP   | 768x768   | 8          | 40k       | val  |       |  [model]() [config]()     |
+| SETR-PUP   | 768x768   | 8          | 80k       | val  |       |  [model]() [config]()     |
+| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  |       |  [model]() [config]()     | 
+| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  |       |  [model]() [config]()     | 
+| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  |       |  [model]() [config]()     | 
+| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  |       |  [model]() [config]()     | 
+| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  |       |  [model]() [config]()     |
+| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  |       |  [model]() [config]()     |
+
+#### ADE20K
+
+| Method   | Crop Size | Batch size | iteration | set  | mIoU  |                           | 
+| -------- | --------- | ---------- | --------- | ---- | ----- | -----------------------   |
+| SETR-MLA | 512x512   | 8          | 160k      | val  |       |   [model]()[config]()     | 
+| SETR-MLA | 512x512   | 16         | 160k      | val  |       |   [model]()[config]()     | 
+| SETR-PUP | 512x512   | 16         | 160k      | val  |       |   [model]()[config]()     | 
+
+#### Pascal Context
+
+| Method   | Crop Size | Batch size | iteration | set  | mIoU  |                           | 
+| -------- | --------- | ---------- | --------- | ---- | ----- | -----------------------   |
+| SETR-MLA | 480x480   | 8          | 80k       | val  |       |   [model]()[config]()     | 
+| SETR-MLA | 480x480   | 16         | 80k       | val  |       |   [model]()[config]()     | 
+| SETR-PUP | 480x480   | 16         | 80k       | val  |       |   [model]()[config]()     | 
+
+
+
+
+
+## Get Started
+
+Please see [getting_started.md](docs/getting_started.md) for the basic usage of MMSegmentation.
+
+
+
+## Reference 
 
 ```bibtex
 @inproceedings{SETR,
@@ -17,14 +72,12 @@ CVPR 2021
 }
 ```
 
-
-# License
-MIT License
+## License
 
 
-# Acknowledgement
+## Acknowledgement
 
 Thanks to previous open-sourced repo:  
-[mmsegmentation](https://github.com/open-mmlab/mmsegmentation)    
-[ViT-pytorch](https://github.com/jeonsworld/ViT-pytorch)   
+[mmsegmentation](https://github.com/open-mmlab/mmsegmentation)     
 [pytorch-image-models](https://github.com/rwightman/pytorch-image-models)  
+
