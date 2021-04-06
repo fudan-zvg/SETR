@@ -17,7 +17,7 @@ model = dict(
         pos_embed_interp=True,
         align_corners=False,
         mla_channels=256,
-        mla_inedx=(5,11,17,23)
+        mla_index=(5,11,17,23)
         ),
     decode_head=dict(
         type='VIT_MLAHead',
