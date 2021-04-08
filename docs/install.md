@@ -30,7 +30,7 @@ Either `mmcv` or `mmcv-full` is compatible with MMSegmentation, but for methods 
 The pre-build mmcv-full (with PyTorch 1.5 and CUDA 10.1) can be installed by running: (other available versions could be found [here](https://mmcv.readthedocs.io/en/latest/#install-with-pip))
 
 ```shell
-pip install mmcv-full==latest+torch1.5.0+cu101 -f https://download.openmmlab.com/mmcv/dist/index.html
+pip install mmcv-full==1.2.2 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
 ```
 
 **Install mmcv for Windows (Experimental):**
@@ -69,6 +69,7 @@ Instead, if you would like to install SETR in `dev` mode, run following
 git clone https://github.com/fudan-zvg/SETR.git
 cd SETR
 pip install -e .  # or "python setup.py develop"
+pip install -r requirements/optional.txt
 ```
 
 Note:
@@ -92,10 +93,11 @@ conda create -n open-mmlab python=3.7 -y
 conda activate open-mmlab
 
 conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
-pip install mmcv-full==latest+torch1.5.0+cu101 -f https://download.openmmlab.com/mmcv/dist/index.html
+pip install mmcv-full==1.2.2 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
 git clone https://github.com/fudan-zvg/SETR.git
 cd SETR
 pip install -e .  # or "python setup.py develop"
+pip install -r requirements/optional.txt
 
 mkdir data
 ln -s $DATA_ROOT data
@@ -117,6 +119,7 @@ pip install mmcv
 git clone https://github.com/fudan-zvg/SETR.git
 cd SETR
 pip install -e .  # or "python setup.py develop"
+pip install -r requirements/optional.txt
 
 mklink /D data %DATA_ROOT%
 ```

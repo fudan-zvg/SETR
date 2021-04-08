@@ -11,6 +11,48 @@
 
 Our project is developed based on [mmsegmentation](https://github.com/open-mmlab/mmsegmentation). Please follow the official mmsegmentation [INSTALL.md](docs/install.md) and [getting_started.md](docs/getting_started.md) for installation and dataset preparation.
 
+### A from-scratch setup script
+
+#### Linux
+
+Here is a full script for setting up SETR with conda and link the dataset path (supposing that your dataset path is $DATA_ROOT).
+
+```shell
+conda create -n open-mmlab python=3.7 -y
+conda activate open-mmlab
+
+conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
+pip install mmcv-full==1.2.2 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
+git clone https://github.com/fudan-zvg/SETR.git
+cd SETR
+pip install -e .  # or "python setup.py develop"
+pip install -r requirements/optional.txt
+
+mkdir data
+ln -s $DATA_ROOT data
+```
+
+#### Windows(Experimental)
+
+Here is a full script for setting up SETR with conda and link the dataset path (supposing that your dataset path is
+%DATA_ROOT%. Notice: It must be an absolute path).
+
+```shell
+conda create -n open-mmlab python=3.7 -y
+conda activate open-mmlab
+
+conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
+set PATH=full\path\to\your\cpp\compiler;%PATH%
+pip install mmcv
+
+git clone https://github.com/fudan-zvg/SETR.git
+cd SETR
+pip install -e .  # or "python setup.py develop"
+pip install -r requirements/optional.txt
+
+mklink /D data %DATA_ROOT%
+```
+
 ## Main results
 
 
@@ -52,6 +94,8 @@ Our project is developed based on [mmsegmentation](https://github.com/open-mmlab
 
 ## Get Started
 
+### Pre-trained model
+When you run the training command, the pre-trained model will be automatically downloaded and placed in a suitable location. If you are unable to download due to network reasons, you can download the pre-trained model by clicking [here](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth) and [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_384-d0272ac0.pth) (DeiT), and then put it in `/root/.cache/torch/hub/checkpoints/`(this is the path on my computer, you can get the correct one from the log of the training command).
 
 ### Train
 
@@ -60,6 +104,12 @@ Our project is developed based on [mmsegmentation](https://github.com/open-mmlab
 # For example, train a SETR-PUP on Cityscapes dataset with 8 GPUs
 ./tools/dist_train.sh configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py 8
 ```
+
+* Tensorboard
+If you want to use Tensorboard, install tensorboard and SETR/configs/_base_/default_runtime.py
+
+If you want to use tensorboard, you need to `pip install tensorflow` and uncomment the Line 6 `dict(type='TensorboardLoggerHook')` of `SETR/configs/_base_/default_runtime.py`.
+
 
 ### Single-scale testing
 
@@ -83,7 +133,58 @@ work_dirs/SETR_PUP_768x768_40k_cityscapes_bs_8/iter_40000.pth \
 8 --eval mIoU
 ```
 
+### Generate the png files to be submit to the official evaluation server
+
+* Cityscapes
+
+    First, add following to config file `configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py`,
+
+    ```python
+    data = dict(
+        test=dict(
+            img_dir='leftImg8bit/test',
+            ann_dir='gtFine/test'))
+    ```
+
+   Then run test.
+
+    ```shell
+    ./tools/dist_test.sh configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py \
+        work_dirs/SETR_PUP_768x768_40k_cityscapes_bs_8/iter_40000.pth \
+        8 --format-only --eval-options "imgfile_prefix=./SETR_PUP_768x768_40k_cityscapes_bs_8_test_results"
+    ```
+
+    You will get png files under `./SETR_PUP_768x768_40k_cityscapes_bs_8_test_results` directory.
+    You may run `zip -r SETR_PUP_768x768_40k_cityscapes_bs_8_test_results.zip SETR_PUP_768x768_40k_cityscapes_bs_8_test_results/` and submit the zip file to [evaluation server](https://www.cityscapes-dataset.com/submit/).
+
+* ADE20k
+
+    ADE20k dataset could be download from this [link](http://sceneparsing.csail.mit.edu/)
+
+    First, add following to config file `configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py`,
+
+    ```python
+    data = dict(
+        test=dict(
+            img_dir='images/testing',
+            ann_dir='annotations/testing'))
+    ```
+
+   Then run test.
+
+    ```shell
+    ./tools/dist_test.sh configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py \
+        work_dirs/SETR_PUP_512x512_160k_ade20k_bs_16/iter_1600000.pth \
+        8 --format-only --eval-options "imgfile_prefix=./SETR_PUP_512x512_160k_ade20k_bs_16_test_results"
+    ```
+
+    You will get png files under `./SETR_PUP_512x512_160k_ade20k_bs_16_test_results` directory.
+    You may run `zip -r SETR_PUP_512x512_160k_ade20k_bs_16_test_results.zip SETR_PUP_512x512_160k_ade20k_bs_16_test_results/` and submit the zip file to [evaluation server](http://sceneparsing.csail.mit.edu/eval/login.php).
+
+
 Please see [getting_started.md](docs/getting_started.md) for the more basic usage of training and testing.
+
+
 
 ## Reference
 
