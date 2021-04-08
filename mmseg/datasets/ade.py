@@ -115,10 +115,6 @@ class ADE20KDataset(CustomDataset):
             filename = self.img_infos[idx]['filename']
             basename = osp.splitext(osp.basename(filename))[0]
 
-            # print(result)
-            # print(type(result))
-            # print(result.shape)
-
             # save seg_logit
             if len(result.shape)==3:
                 # print(result.shape)
@@ -131,9 +127,6 @@ class ADE20KDataset(CustomDataset):
                 # print(result.shape)
                 png_filename = osp.join(imgfile_prefix, f'{basename}.png')
                 result = result + 1
-                if result.max()==150 or result.max()==149:
-                    print(result.max())
-                    print(result.min())
 
                 output = Image.fromarray(result.astype(np.uint8))
                 output.save(png_filename)
