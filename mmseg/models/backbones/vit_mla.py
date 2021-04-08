@@ -41,7 +41,7 @@ default_cfgs = {
     'vit_large_patch16_384': _cfg(
         url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth',
         input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0,
-        pretrained_finetune='pretrain/jx_vit_large_p16_384-b3be5167.pth'),
+    ),
     'vit_large_patch32_384': _cfg(
         url='https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p32_384-9b920ba8.pth',
         input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0),
@@ -53,9 +53,9 @@ default_cfgs = {
     'vit_base_resnet26d_224': _cfg(),
     'vit_base_resnet50d_224': _cfg(),
     'deit_base_distilled_path16_384': _cfg(
-        input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0,
-        pretrained_finetune='pretrain/deit_base_distilled_patch16_384.pth'
-    )
+        url='https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_384-d0272ac0.pth',
+        input_size=(3, 384, 384), mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5), crop_pct=1.0, checkpoint=True,
+    ),
 }
 
 
