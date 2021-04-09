@@ -6,7 +6,7 @@ _base_ = [
 norm_cfg = dict(type='SyncBN', requires_grad=True)
 model = dict(
     backbone=dict(img_size=768,align_corners=False, pos_embed_interp=True,drop_rate=0.),
-    decode_head=dict(img_size=768,align_corners=False,num_conv=2,upsampling_method='bilinear'),
+    decode_head=dict(img_size=768,align_corners=False,num_conv=2,upsampling_method='bilinear',conv3x3_conv1x1=False),
     auxiliary_head=[dict(
     type='VisionTransformerUpHead',
     in_channels=1024,
@@ -19,6 +19,7 @@ model = dict(
     num_conv=2,
     upsampling_method='bilinear',
     align_corners=False,
+    conv3x3_conv1x1=False,
     loss_decode=dict(
         type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     dict(
@@ -33,6 +34,7 @@ model = dict(
     num_conv=2,
     upsampling_method='bilinear',
     align_corners=False,
+    conv3x3_conv1x1=False,
     loss_decode=dict(
         type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     dict(
@@ -47,6 +49,7 @@ model = dict(
     num_conv=2,
     upsampling_method='bilinear',
     align_corners=False,
+    conv3x3_conv1x1=False,
     loss_decode=dict(
         type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     ])

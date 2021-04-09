@@ -20,7 +20,7 @@ class VisionTransformerUpHead(BaseDecodeHead):
     """
     def __init__(self, img_size=768, embed_dim=1024, 
                 norm_layer=partial(nn.LayerNorm, eps=1e-6), norm_cfg=None, 
-                num_conv=1, upsampling_method='bilinear', num_upsampe_layer=1, **kwargs):
+                num_conv=1, upsampling_method='bilinear', num_upsampe_layer=1, conv3x3_conv1x1=True, **kwargs):
         super(VisionTransformerUpHead, self).__init__(**kwargs)
         self.img_size = img_size
         self.norm_cfg = norm_cfg
@@ -28,11 +28,15 @@ class VisionTransformerUpHead(BaseDecodeHead):
         self.norm = norm_layer(embed_dim)
         self.upsampling_method = upsampling_method
         self.num_upsampe_layer = num_upsampe_layer
+        self.conv3x3_conv1x1=conv3x3_conv1x1
 
         out_channel=self.num_classes
 
         if self.num_conv==2:
-            self.conv_0 = nn.Conv2d(embed_dim, 256, kernel_size=3, stride=1, padding=1)
+            if self.conv3x3_conv1x1:
+                self.conv_0 = nn.Conv2d(embed_dim, 256, kernel_size=3, stride=1, padding=1)
+            else:
+                self.conv_0 = nn.Conv2d(embed_dim, 256, 1, 1)
             self.conv_1 = nn.Conv2d(256, out_channel, 1, 1)
             _, self.syncbn_fc_0 = build_norm_layer(self.norm_cfg, 256)
 

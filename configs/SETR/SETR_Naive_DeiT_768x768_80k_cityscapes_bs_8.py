@@ -8,7 +8,7 @@ norm_cfg = dict(type='SyncBN', requires_grad=True)
 model = dict(
     backbone=dict(img_size=768,align_corners=False, pos_embed_interp=True,drop_rate=0.,
                   model_name='deit_base_distilled_path16_384', embed_dim=768, depth=12, num_heads=12),
-    decode_head=dict(img_size=768,align_corners=False,num_conv=2,upsampling_method='bilinear',
+    decode_head=dict(img_size=768,align_corners=False,num_conv=2,upsampling_method='bilinear',conv3x3_conv1x1=False,
                      embed_dim=768, in_index=11),
     auxiliary_head=[dict(
     type='VisionTransformerUpHead',
@@ -22,6 +22,7 @@ model = dict(
     num_conv=2,
     upsampling_method='bilinear',
     align_corners=False,
+    conv3x3_conv1x1=False,
     loss_decode=dict(
         type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     dict(
@@ -36,6 +37,7 @@ model = dict(
     num_conv=2,
     upsampling_method='bilinear',
     align_corners=False,
+    conv3x3_conv1x1=False,
     loss_decode=dict(
         type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     dict(
@@ -50,6 +52,7 @@ model = dict(
     num_conv=2,
     upsampling_method='bilinear',
     align_corners=False,
+    conv3x3_conv1x1=False,
     loss_decode=dict(
         type='CrossEntropyLoss', use_sigmoid=False, loss_weight=0.4)),
     ])
