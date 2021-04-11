@@ -169,11 +169,12 @@ class Resize(object):
 
     def _resize_img(self, results):
         """Resize images with ``results['scale']``."""
-        #print(self.dataset)
+        # print(self.dataset)
         if self.keep_ratio:
-            if self.multi_scale_test or self.dataset == 'pascal_context' or self.dataset == 'cocostuff':
-                #print("multi_scale")
-                min_short = {'cityscapes':768, 'ade20k': 512, 'pascal_context': 480}
+            if self.multi_scale_test or self.dataset == 'pascal_context':
+                # print("multi_scale")
+                min_short = {'cityscapes': 768,
+                             'ade20k': 512, 'pascal_context': 480}
                 if min(results['scale']) < min_short[self.dataset]:
                     new_short = min_short[self.dataset]
                 else:
@@ -185,7 +186,7 @@ class Resize(object):
                 else:
                     new_h, new_w = new_short, new_short * w / h
                 results['scale'] = (new_h, new_w)
-                
+
             img, scale_factor = mmcv.imrescale(
                 results['img'], results['scale'], return_scale=True)
             # the w_scale and h_scale has minor difference
@@ -631,5 +632,3 @@ class PhotoMetricDistortion(object):
                      f'{self.saturation_upper}), '
                      f'hue_delta={self.hue_delta})')
         return repr_str
-
-

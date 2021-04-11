@@ -212,4 +212,3 @@ class CityscapesCoarseDataset(CustomDataset):
             tmp_dir.cleanup()
 
         return eval_results
-

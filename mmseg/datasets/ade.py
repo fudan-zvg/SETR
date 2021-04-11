@@ -3,11 +3,11 @@ import tempfile
 
 import mmcv
 import numpy as np
-from mmcv.utils import print_log
 from PIL import Image
 
 from .builder import DATASETS
 from .custom import CustomDataset
+
 
 @DATASETS.register_module()
 class ADE20KDataset(CustomDataset):
@@ -116,14 +116,14 @@ class ADE20KDataset(CustomDataset):
             basename = osp.splitext(osp.basename(filename))[0]
 
             # save seg_logit
-            if len(result.shape)==3:
+            if len(result.shape) == 3:
                 # print(result.shape)
                 npy_filename = osp.join(imgfile_prefix, f'{basename}.npy')
                 np.save(npy_filename, result)
                 result_files.append(npy_filename)
 
             # save seg_pred
-            if len(result.shape)==2:
+            if len(result.shape) == 2:
                 # print(result.shape)
                 png_filename = osp.join(imgfile_prefix, f'{basename}.png')
                 result = result + 1
@@ -131,7 +131,7 @@ class ADE20KDataset(CustomDataset):
                 output = Image.fromarray(result.astype(np.uint8))
                 output.save(png_filename)
                 result_files.append(png_filename)
-                
+
             prog_bar.update()
 
         return result_files
@@ -167,6 +167,3 @@ class ADE20KDataset(CustomDataset):
             tmp_dir = None
         result_files = self.results2img(results, imgfile_prefix, to_label_id)
         return result_files, tmp_dir
-
-
-

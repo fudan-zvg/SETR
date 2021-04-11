@@ -22,7 +22,8 @@ test_pipeline = [
         img_ratios=[0.5, 0.75, 1.0, 1.25, 1.5, 1.75],
         flip=True,
         transforms=[
-            dict(type='Resize', keep_ratio=True, dataset='cityscapes', multi_scale_test=True),
+            dict(type='Resize', keep_ratio=True,
+                 dataset='cityscapes', multi_scale_test=True),
             dict(type='RandomFlip'),
             dict(type='Normalize', **img_norm_cfg),
             dict(type='ImageToTensor', keys=['img']),

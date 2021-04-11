@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 from functools import partial
 import math
 
@@ -93,7 +92,8 @@ class Attention(nn.Module):
 
     def forward(self, x):
         B, N, C = x.shape
-        q, k, v = self.qkv(x).reshape(B, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
+        q, k, v = self.qkv(x).reshape(B, N, 3, self.num_heads,
+                                      C // self.num_heads).permute(2, 0, 3, 1, 4)
 
         attn = (q @ k.transpose(-2, -1)) * self.scale
         attn = attn.softmax(dim=-1)
@@ -114,10 +114,12 @@ class Block(nn.Module):
         self.attn = Attention(
             dim, num_heads=num_heads, qkv_bias=qkv_bias, qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop)
         # NOTE: drop path for stochastic depth, we shall see if this is better than dropout here
-        self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
+        self.drop_path = DropPath(
+            drop_path) if drop_path > 0. else nn.Identity()
         self.norm2 = norm_layer(dim)
         mlp_hidden_dim = int(dim * mlp_ratio)
-        self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim, act_layer=act_layer, drop=drop)
+        self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim,
+                       act_layer=act_layer, drop=drop)
 
     def forward(self, x):
         x = x + self.drop_path(self.attn(self.norm1(x)))
@@ -128,16 +130,19 @@ class Block(nn.Module):
 class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
+
     def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
         super().__init__()
         img_size = to_2tuple(img_size)
         patch_size = to_2tuple(patch_size)
-        num_patches = (img_size[1] // patch_size[1]) * (img_size[0] // patch_size[0])
+        num_patches = (img_size[1] // patch_size[1]) * \
+            (img_size[0] // patch_size[0])
         self.img_size = img_size
         self.patch_size = patch_size
         self.num_patches = num_patches
 
-        self.proj = nn.Conv2d(in_chans, embed_dim, kernel_size=patch_size, stride=patch_size)
+        self.proj = nn.Conv2d(in_chans, embed_dim,
+                              kernel_size=patch_size, stride=patch_size)
 
     def forward(self, x):
         B, C, H, W = x.shape
@@ -154,6 +159,7 @@ class HybridEmbed(nn.Module):
     """ CNN Feature Map Embedding
     Extract feature map from CNN, flatten, project to embedding dim.
     """
+
     def __init__(self, backbone, img_size=224, feature_size=None, in_chans=3, embed_dim=768):
         super().__init__()
         assert isinstance(backbone, nn.Module)
@@ -168,7 +174,8 @@ class HybridEmbed(nn.Module):
                 training = backbone.training
                 if training:
                     backbone.eval()
-                o = self.backbone(torch.zeros(1, in_chans, img_size[0], img_size[1]))[-1]
+                o = self.backbone(torch.zeros(
+                    1, in_chans, img_size[0], img_size[1]))[-1]
                 feature_size = o.shape[-2:]
                 feature_dim = o.shape[1]
                 backbone.train(training)
@@ -188,19 +195,27 @@ class HybridEmbed(nn.Module):
 class Conv_MLA(nn.Module):
     def __init__(self, in_channels=1024, mla_channels=256, norm_cfg=None):
         super(Conv_MLA, self).__init__()
-        self.mla_p2_1x1 = nn.Sequential(nn.Conv2d(in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p3_1x1 = nn.Sequential(nn.Conv2d(in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p4_1x1 = nn.Sequential(nn.Conv2d(in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p5_1x1 = nn.Sequential(nn.Conv2d(in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p2 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p3 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p4 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
-        self.mla_p5 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p2_1x1 = nn.Sequential(nn.Conv2d(
+            in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p3_1x1 = nn.Sequential(nn.Conv2d(
+            in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p4_1x1 = nn.Sequential(nn.Conv2d(
+            in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p5_1x1 = nn.Sequential(nn.Conv2d(
+            in_channels, mla_channels, 1, bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p2 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1,
+                                    bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p3 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1,
+                                    bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p4 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1,
+                                    bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
+        self.mla_p5 = nn.Sequential(nn.Conv2d(mla_channels, mla_channels, 3, padding=1,
+                                    bias=False), build_norm_layer(norm_cfg, mla_channels)[1], nn.ReLU())
 
     def to_2D(self, x):
         n, hw, c = x.shape
-        h=w = int(math.sqrt(hw))
-        x = x.transpose(1,2).reshape(n, c, h, w)
+        h = w = int(math.sqrt(hw))
+        x = x.transpose(1, 2).reshape(n, c, h, w)
         return x
 
     def forward(self, res2, res3, res4, res5):
@@ -231,11 +246,12 @@ class Conv_MLA(nn.Module):
 class VIT_MLA(nn.Module):
     """ Vision Transformer with support for patch or hybrid CNN input stage
     """
+
     def __init__(self, model_name='vit_large_patch16_384', img_size=384, patch_size=16, in_chans=3, embed_dim=1024, depth=24,
                  num_heads=16, num_classes=19, mlp_ratio=4., qkv_bias=True, qk_scale=None, drop_rate=0.1, attn_drop_rate=0.,
-                 drop_path_rate=0., hybrid_backbone=None, norm_layer=partial(nn.LayerNorm, eps=1e-6), norm_cfg=None, 
-                 pos_embed_interp=False, random_init=False, align_corners=False, mla_channels=256, 
-                 mla_index=(5,11,17,23), **kwargs):
+                 drop_path_rate=0., hybrid_backbone=None, norm_layer=partial(nn.LayerNorm, eps=1e-6), norm_cfg=None,
+                 pos_embed_interp=False, random_init=False, align_corners=False, mla_channels=256,
+                 mla_index=(5, 11, 17, 23), **kwargs):
         super(VIT_MLA, self).__init__(**kwargs)
         self.model_name = model_name
         self.img_size = img_size
@@ -261,7 +277,7 @@ class VIT_MLA(nn.Module):
         self.mla_index = mla_index
 
         self.num_stages = self.depth
-        self.out_indices= tuple(range(self.num_stages))
+        self.out_indices = tuple(range(self.num_stages))
 
         if self.hybrid_backbone is not None:
             self.patch_embed = HybridEmbed(
@@ -272,17 +288,20 @@ class VIT_MLA(nn.Module):
         self.num_patches = self.patch_embed.num_patches
 
         self.cls_token = nn.Parameter(torch.zeros(1, 1, self.embed_dim))
-        self.pos_embed = nn.Parameter(torch.zeros(1, self.num_patches + 1, self.embed_dim))
+        self.pos_embed = nn.Parameter(torch.zeros(
+            1, self.num_patches + 1, self.embed_dim))
         self.pos_drop = nn.Dropout(p=self.drop_rate)
 
-        dpr = [x.item() for x in torch.linspace(0, self.drop_path_rate, self.depth)]  # stochastic depth decay rule
+        dpr = [x.item() for x in torch.linspace(0, self.drop_path_rate,
+                                                self.depth)]  # stochastic depth decay rule
         self.blocks = nn.ModuleList([
             Block(
                 dim=self.embed_dim, num_heads=self.num_heads, mlp_ratio=self.mlp_ratio, qkv_bias=self.qkv_bias, qk_scale=self.qk_scale,
                 drop=self.drop_rate, attn_drop=self.attn_drop_rate, drop_path=dpr[i], norm_layer=self.norm_layer)
             for i in range(self.depth)])
 
-        self.mla = Conv_MLA(in_channels=self.embed_dim, mla_channels=self.mla_channels, norm_cfg=self.norm_cfg)
+        self.mla = Conv_MLA(in_channels=self.embed_dim,
+                            mla_channels=self.mla_channels, norm_cfg=self.norm_cfg)
 
         self.norm_0 = norm_layer(self.embed_dim)
         self.norm_1 = norm_layer(self.embed_dim)
@@ -300,7 +319,7 @@ class VIT_MLA(nn.Module):
     def init_weights(self, pretrained=None):
         # nn.init.normal_(self.pos_embed, std=0.02)
         # nn.init.zeros_(self.cls_token)
-        
+
         for m in self.modules():
             if isinstance(m, nn.Linear):
                 trunc_normal_(m.weight, std=.02)
@@ -314,9 +333,11 @@ class VIT_MLA(nn.Module):
             self.default_cfg = default_cfgs[self.model_name]
 
             if self.model_name in ['vit_small_patch16_224', 'vit_base_patch16_224']:
-                load_pretrained(self, num_classes=self.num_classes, in_chans=self.in_chans, pos_embed_interp=self.pos_embed_interp, num_patches=self.patch_embed.num_patches, align_corners=self.align_corners, filter_fn=self._conv_filter)
+                load_pretrained(self, num_classes=self.num_classes, in_chans=self.in_chans, pos_embed_interp=self.pos_embed_interp,
+                                num_patches=self.patch_embed.num_patches, align_corners=self.align_corners, filter_fn=self._conv_filter)
             else:
-                load_pretrained(self, num_classes=self.num_classes, in_chans=self.in_chans, pos_embed_interp=self.pos_embed_interp, num_patches=self.patch_embed.num_patches, align_corners=self.align_corners)
+                load_pretrained(self, num_classes=self.num_classes, in_chans=self.in_chans, pos_embed_interp=self.pos_embed_interp,
+                                num_patches=self.patch_embed.num_patches, align_corners=self.align_corners)
         else:
             print('Initialize weight randomly')
 
@@ -338,12 +359,13 @@ class VIT_MLA(nn.Module):
         x = self.patch_embed(x)
         x = x.flatten(2).transpose(1, 2)
 
-        cls_tokens = self.cls_token.expand(B, -1, -1)  # stole cls_tokens impl from Phil Wang, thanks
+        # stole cls_tokens impl from Phil Wang, thanks
+        cls_tokens = self.cls_token.expand(B, -1, -1)
         x = torch.cat((cls_tokens, x), dim=1)
         x = x + self.pos_embed
-        x = x[:,1:]
+        x = x[:, 1:]
         x = self.pos_drop(x)
-              
+
         outs = []
         for i, blk in enumerate(self.blocks):
             x = blk(x)
@@ -354,8 +376,7 @@ class VIT_MLA(nn.Module):
         c12 = self.norm_1(outs[self.mla_index[1]])
         c18 = self.norm_2(outs[self.mla_index[2]])
         c24 = self.norm_3(outs[self.mla_index[3]])
-        
-        p6, p12, p18, p24 = self.mla(c6, c12, c18, c24)
-        
-        return (p6, p12, p18, p24)
 
+        p6, p12, p18, p24 = self.mla(c6, c12, c18, c24)
+
+        return (p6, p12, p18, p24)

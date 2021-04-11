@@ -14,5 +14,3 @@ __all__ = [
     'PascalVOCDataset', 'ADE20KDataset', 'PascalContextDataset', 'MapillaryDataset',
     'CityscapesCoarseDataset'
 ]
-
-

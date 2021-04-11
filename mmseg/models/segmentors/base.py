@@ -268,4 +268,3 @@ class BaseSegmentor(nn.Module):
             warnings.warn('show==False and out_file is not specified, only '
                           'result image will be returned')
             return img
-
