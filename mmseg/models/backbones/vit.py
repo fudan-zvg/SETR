@@ -246,8 +246,8 @@ class VisionTransformer(nn.Module):
             for i in range(self.depth)])
 
         # NOTE as per official impl, we could have a pre-logits representation dense layer + tanh here
-        #self.repr = nn.Linear(embed_dim, representation_size)
-        #self.repr_act = nn.Tanh()
+        # self.repr = nn.Linear(embed_dim, representation_size)
+        # self.repr_act = nn.Tanh()
 
         trunc_normal_(self.pos_embed, std=.02)
         trunc_normal_(self.cls_token, std=.02)
@@ -266,7 +266,7 @@ class VisionTransformer(nn.Module):
                 nn.init.constant_(m.bias, 0)
                 nn.init.constant_(m.weight, 1.0)
 
-        if self.random_init == False:
+        if not self.random_init:
             self.default_cfg = default_cfgs[self.model_name]
 
             if self.model_name in ['vit_small_patch16_224', 'vit_base_patch16_224']:
