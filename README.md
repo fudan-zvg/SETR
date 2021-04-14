@@ -58,43 +58,43 @@ mklink /D data %DATA_ROOT%
 
 #### Cityscapes
 
-| Method     | Crop Size | Batch size | iteration | set  | mIoU  |                          |
-| ---------- | --------- | ---------- | --------- | ---- | ----- | -----------------------  |
-| SETR-Naive | 768x768   | 8          | 40k       | val  | 77.36 | [model]() [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
-| SETR-Naive | 768x768   | 8          | 80k       | val  | 77.90 |  [model]() [config](configs/SETR/SETR_Naive_768x768_80k_cityscapes_bs_8.py)     |
-| SETR-MLA   | 768x768   | 8          | 40k       | val  | 76.65 |  [model]() [config](configs/SETR/SETR_MLA_768x768_40k_cityscapes_bs_8.py)     |
-| SETR-MLA   | 768x768   | 8          | 80k       | val  | 77.24 |  [model]() [config](configs/SETR/SETR_MLA_768x768_80k_cityscapes_bs_8.py)     |
-| SETR-PUP   | 768x768   | 8          | 40k       | val  | 78.39 |  [model]() [config](configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py)     |
-| SETR-PUP   | 768x768   | 8          | 80k       | val  | 79.34|  [model]() [config](configs/SETR/SETR_PUP_768x768_80k_cityscapes_bs_8.py)     |
-| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  | 77.85 |  [model]() [config](configs/SETR/SETR_Naive_DeiT_768x768_40k_cityscapes_bs_8.py)     |
-| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  | 78.66 |  [model]() [config](configs/SETR/SETR_Naive_DeiT_768x768_80k_cityscapes_bs_8.py)     |
-| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  | 78.04 |  [model]() [config](configs/SETR/SETR_MLA_DeiT_768x768_40k_cityscapes_bs_8.py)     |
-| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  | 78.98 |  [model]() [config](configs/SETR/SETR_MLA_DeiT_768x768_80k_cityscapes_bs_8.py)     |
-| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  | 78.79 |  [model]() [config](configs/SETR/SETR_PUP_DeiT_768x768_40k_cityscapes_bs_8.py)     |
-| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  | 79.45 |  [model]() [config](configs/SETR/SETR_PUP_DeiT_768x768_80k_cityscapes_bs_8.py)     |
+| Method     | Crop Size | Batch size | iteration | set  | mIoU  | model | config |
+| ---------- | --------- | ---------- | --------- | ---- | ----- | -----------------------  | -----------------------  |
+| SETR-Naive | 768x768   | 8          | 40k       | val  | 77.36 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
+| SETR-Naive | 768x768   | 8          | 80k       | val  | 77.90 | [google drive](https://drive.google.com/file/d/1dplB4wceJhyVRQfZR5AWODywMN90CY0h/view?usp=sharing) |  [config](configs/SETR/SETR_Naive_768x768_80k_cityscapes_bs_8.py)     |
+| SETR-MLA   | 768x768   | 8          | 40k       | val  | 76.65 | [google drive](https://drive.google.com/file/d/18k26X-xM7BEQZUjzkvroeGV-6XwPgBqN/view?usp=sharing) |  [config](configs/SETR/SETR_MLA_768x768_40k_cityscapes_bs_8.py)     |
+| SETR-MLA   | 768x768   | 8          | 80k       | val  | 77.24 | [google drive](https://drive.google.com/file/d/1ke6wcsCwP_J-p8sYriCZ3pC8G61bE0v_/view?usp=sharing) |  [config](configs/SETR/SETR_MLA_768x768_80k_cityscapes_bs_8.py)     |
+| SETR-PUP   | 768x768   | 8          | 40k       | val  | 78.39 | [google drive](https://drive.google.com/file/d/1DcZltdh6eHwmQ5BvCdHudJRgJUjPzS56/view?usp=sharing) |  [config](configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py)     |
+| SETR-PUP   | 768x768   | 8          | 80k       | val  | 79.34| [google drive](https://drive.google.com/file/d/1469aYtEAuhT39BrHn0yOv1s71unF85JE/view?usp=sharing) |  [config](configs/SETR/SETR_PUP_768x768_80k_cityscapes_bs_8.py)     |
+| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  | 77.85 |  |  [config](configs/SETR/SETR_Naive_DeiT_768x768_40k_cityscapes_bs_8.py)     |
+| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  | 78.66 |  |  [config](configs/SETR/SETR_Naive_DeiT_768x768_80k_cityscapes_bs_8.py)     |
+| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  | 78.04 |  |  [config](configs/SETR/SETR_MLA_DeiT_768x768_40k_cityscapes_bs_8.py)     |
+| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  | 78.98 |       |  [config](configs/SETR/SETR_MLA_DeiT_768x768_80k_cityscapes_bs_8.py)     |
+| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  | 78.79 |       |  [config](configs/SETR/SETR_PUP_DeiT_768x768_40k_cityscapes_bs_8.py)     |
+| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  | 79.45 |       |  [config](configs/SETR/SETR_PUP_DeiT_768x768_80k_cityscapes_bs_8.py)     |
 
 #### ADE20K
 
-| Method     | Crop Size | Batch size | iteration | set  | mIoU  | mIoU(ms+flip) |                                                              |
-| ---------- | --------- | ---------- | --------- | ---- | ----- | ------------- | ------------------------------------------------------------ |
-| SETR-Naive | 512x512   | 16         | 160k      | Val  | 48.06 | 48.80         | [model]() [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py) |
-| SETR-MLA   | 512x512   | 8          | 160k      | val  | 47.79 | 50.03         | [model]() [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_8.py) |
-| SETR-MLA   | 512x512   | 16         | 160k      | val  | 48.64 | 50.28         | [model]() [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py) |
-| SETR-PUP   | 512x512   | 16         | 160k      | val  | 48.62 | 50.09         | [model]() [config](configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py) |
+| Method     | Crop Size | Batch size | iteration | set  | mIoU  | mIoU(ms+flip) | model                                                        | Config                                                       |
+| ---------- | --------- | ---------- | --------- | ---- | ----- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SETR-Naive | 512x512   | 16         | 160k      | Val  | 48.06 | 48.80         | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py) |
+| SETR-MLA   | 512x512   | 8          | 160k      | val  | 47.79 | 50.03         | [google drive](https://drive.google.com/file/d/1Zcaut5LAKYibjyeCcD3m-aG-ETWW6uhA/view?usp=sharing) | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_8.py)  |
+| SETR-MLA   | 512x512   | 16         | 160k      | val  | 48.64 | 50.28         |                                                              | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py) |
+| SETR-PUP   | 512x512   | 16         | 160k      | val  | 48.62 | 50.09         | [google drive](https://drive.google.com/file/d/1hCeiz60ITgVPkWsrKwah8JnwM3G8VVL4/view?usp=sharing) | [config](configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py) |
 
 #### Pascal Context
 
-| Method     | Crop Size | Batch size | iteration | set  | mIoU  | mIoU(ms+flip) |                                                              |
-| ---------- | --------- | ---------- | --------- | ---- | ----- | ------------- | ------------------------------------------------------------ |
-| SETR-Naive | 480x480   | 16         | 80k       | val  | 52.89 | 53.61         | [model]() [config](configs/SETR/SETR_Naive_480x480_80k_pascal_context_bs_16.py) |
-| SETR-MLA   | 480x480   | 8          | 80k       | val  | 54.39| 55.39         | [model]() [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_8.py) |
-| SETR-MLA   | 480x480   | 16         | 80k       | val  | 55.01| 55.83         | [model]() [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_16.py) |
-| SETR-PUP   | 480x480   | 16         | 80k       | val  | 54.37| 55.27         | [model]() [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py) |
-
+| Method     | Crop Size | Batch size | iteration | set  | mIoU  | mIoU(ms+flip) | model | Config |
+| ---------- | --------- | ---------- | --------- | ---- | ----- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SETR-Naive | 480x480   | 16         | 80k       | val  | 52.89 | 53.61         | [google drive](https://drive.google.com/file/d/140T7-wQ3UOzHA0-6pjO3lik_5Vi5RvqJ/view?usp=sharing) | [config](configs/SETR/SETR_Naive_480x480_80k_pascal_context_bs_16.py) |
+| SETR-MLA   | 480x480   | 8          | 80k       | val  | 54.39| 55.39         | [google drive](https://drive.google.com/file/d/1XvhUVIMcdcEYUYKudUcV99vOwhisYh61/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_8.py) |
+| SETR-MLA   | 480x480   | 16         | 80k       | val  | 55.01| 55.83         | [google drive](https://drive.google.com/file/d/1k5CwpKfpNUdAFWOuzwWz9PrRwiGS0Xu9/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_16.py) |
+| SETR-PUP   | 480x480   | 16         | 80k       | val  | 54.37| 55.27         | [google drive](https://drive.google.com/file/d/1kXZYyqjA96d2DTL-tRvQjixfDBIZFIyR/view?usp=sharing) | [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py) |
 
 ## Get Started
 
 ### Pre-trained model
+
 When you run the training command, the pre-trained model will be automatically downloaded and placed in a suitable location. If you are unable to download due to network reasons, you can download the pre-trained model from [here](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth) (ViT) and [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_384-d0272ac0.pth) (DeiT).
 
 ### Train
