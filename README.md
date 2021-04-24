@@ -106,9 +106,8 @@ When you run the training command, the pre-trained model will be automatically d
 ```
 
 * Tensorboard
-If you want to use Tensorboard, install tensorboard and SETR/configs/_base_/default_runtime.py
 
-If you want to use tensorboard, you need to `pip install tensorflow` and uncomment the Line 6 `dict(type='TensorboardLoggerHook')` of `SETR/configs/_base_/default_runtime.py`.
+  If you want to use tensorboard, you need to `pip install tensorboard` and uncomment the Line 6 `dict(type='TensorboardLoggerHook')` of `SETR/configs/_base_/default_runtime.py`.
 
 
 ### Single-scale testing
