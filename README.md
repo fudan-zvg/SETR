@@ -95,7 +95,7 @@ mklink /D data %DATA_ROOT%
 
 ### Pre-trained model
 
-When you run the training command, the pre-trained model will be automatically downloaded and placed in a suitable location. If you are unable to download due to network reasons, you can download the pre-trained model from [here](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth) (ViT) and [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_384-d0272ac0.pth) (DeiT).
+The pre-trained model will be automatically downloaded and placed in a suitable location when you run the training command. If you are unable to download due to network reasons, you can download the pre-trained model from [here](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vitjx/jx_vit_large_p16_384-b3be5167.pth) (ViT) and [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_384-d0272ac0.pth) (DeiT).
 
 ### Train
 
@@ -154,7 +154,7 @@ work_dirs/SETR_PUP_768x768_40k_cityscapes_bs_8/iter_40000.pth \
     ```
 
     You will get png files under directory `./SETR_PUP_768x768_40k_cityscapes_bs_8_test_results`.
-    You may run `zip -r SETR_PUP_768x768_40k_cityscapes_bs_8_test_results.zip SETR_PUP_768x768_40k_cityscapes_bs_8_test_results/` and submit the zip file to [evaluation server](https://www.cityscapes-dataset.com/submit/).
+    Run `zip -r SETR_PUP_768x768_40k_cityscapes_bs_8_test_results.zip SETR_PUP_768x768_40k_cityscapes_bs_8_test_results/` and submit the zip file to [evaluation server](https://www.cityscapes-dataset.com/submit/).
 
 * ADE20k
 
@@ -178,7 +178,7 @@ work_dirs/SETR_PUP_768x768_40k_cityscapes_bs_8/iter_40000.pth \
     ```
 
     You will get png files under `./SETR_PUP_512x512_160k_ade20k_bs_16_test_results` directory.
-    You may run `zip -r SETR_PUP_512x512_160k_ade20k_bs_16_test_results.zip SETR_PUP_512x512_160k_ade20k_bs_16_test_results/` and submit the zip file to [evaluation server](http://sceneparsing.csail.mit.edu/eval/login.php).
+    Run `zip -r SETR_PUP_512x512_160k_ade20k_bs_16_test_results.zip SETR_PUP_512x512_160k_ade20k_bs_16_test_results/` and submit the zip file to [evaluation server](http://sceneparsing.csail.mit.edu/eval/login.php).
 
 
 Please see [getting_started.md](docs/getting_started.md) for the more basic usage of training and testing.
