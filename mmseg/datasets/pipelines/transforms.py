@@ -38,8 +38,9 @@ class Resize(object):
                  multiscale_mode='range',
                  ratio_range=None,
                  keep_ratio=True,
-                 dataset='cityscapes',
-                 multi_scale_test=False):
+                 crop_size=None,
+                 setr_multi_scale=False):
+
         if img_scale is None:
             self.img_scale = None
         else:
@@ -59,8 +60,8 @@ class Resize(object):
         self.multiscale_mode = multiscale_mode
         self.ratio_range = ratio_range
         self.keep_ratio = keep_ratio
-        self.dataset = dataset
-        self.multi_scale_test = multi_scale_test
+        self.crop_size = crop_size
+        self.setr_multi_scale = setr_multi_scale
 
     @staticmethod
     def random_select(img_scales):
@@ -169,17 +170,14 @@ class Resize(object):
 
     def _resize_img(self, results):
         """Resize images with ``results['scale']``."""
-        # print(self.dataset)
-        if self.keep_ratio:
-            if self.multi_scale_test or self.dataset == 'pascal_context':
-                # print("multi_scale")
-                min_short = {'cityscapes': 768,
-                             'ade20k': 512, 'pascal_context': 480}
-                if min(results['scale']) < min_short[self.dataset]:
-                    new_short = min_short[self.dataset]
-                else:
-                    new_short = results['scale'][0]
 
+        if self.keep_ratio:
+            if self.setr_multi_scale:
+                if min(results['scale']) < self.crop_size[0]:
+                    new_short = self.crop_size[0]
+                else:
+                    new_short = min(results['scale'])
+                    
                 h, w = results['img'].shape[:2]
                 if h > w:
                     new_h, new_w = new_short * h / w, new_short
