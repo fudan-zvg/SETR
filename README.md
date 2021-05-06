@@ -21,7 +21,7 @@ Here is a full script for setting up SETR with conda and link the dataset path (
 conda create -n open-mmlab python=3.7 -y
 conda activate open-mmlab
 
-conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
+conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch -y
 pip install mmcv-full==1.2.2 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
 git clone https://github.com/fudan-zvg/SETR.git
 cd SETR
