@@ -11,6 +11,8 @@
 
 Our project is developed based on [mmsegmentation](https://github.com/open-mmlab/mmsegmentation). Please follow the official mmsegmentation [INSTALL.md](docs/install.md) and [getting_started.md](docs/getting_started.md) for installation and dataset preparation.
 
+[SETR](https://github.com/open-mmlab/mmsegmentation/tree/master/configs/setr) is on MMSegmentation.
+
 ### A from-scratch setup script
 
 #### Linux
