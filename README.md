@@ -9,9 +9,9 @@
 
 ## Installation
 
-Our project is developed based on [mmsegmentation](https://github.com/open-mmlab/mmsegmentation). Please follow the official mmsegmentation [INSTALL.md](docs/install.md) and [getting_started.md](docs/getting_started.md) for installation and dataset preparation.
+Our project is developed based on [MMsegmentation](https://github.com/open-mmlab/mmsegmentation). Please follow the official MMsegmentation [INSTALL.md](docs/install.md) and [getting_started.md](docs/getting_started.md) for installation and dataset preparation.
 
-🔥🔥 SETR is on [MMSegmentation](https://github.com/open-mmlab/mmsegmentation/tree/master/configs/setr). 🔥🔥 
+🔥🔥 SETR is on [MMsegmentation](https://github.com/open-mmlab/mmsegmentation/tree/master/configs/setr). 🔥🔥 
 
 ### A from-scratch setup script
 
@@ -206,6 +206,6 @@ MIT
 ## Acknowledgement
 
 Thanks to previous open-sourced repo:  
-[mmsegmentation](https://github.com/open-mmlab/mmsegmentation)     
+[MMsegmentation](https://github.com/open-mmlab/mmsegmentation)     
 [pytorch-image-models](https://github.com/rwightman/pytorch-image-models)  
 
