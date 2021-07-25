@@ -93,7 +93,9 @@ mklink /D data %DATA_ROOT%
 | SETR-Naive | 480x480   | 16         | 80k       | val  | 52.89 | 53.61         | [google drive](https://drive.google.com/file/d/140T7-wQ3UOzHA0-6pjO3lik_5Vi5RvqJ/view?usp=sharing) | [config](configs/SETR/SETR_Naive_480x480_80k_pascal_context_bs_16.py) |
 | SETR-MLA   | 480x480   | 8          | 80k       | val  | 54.39| 55.39         | [google drive](https://drive.google.com/file/d/1XvhUVIMcdcEYUYKudUcV99vOwhisYh61/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_8.py) |
 | SETR-MLA   | 480x480   | 16         | 80k       | val  | 55.01| 55.83         | [google drive](https://drive.google.com/file/d/1k5CwpKfpNUdAFWOuzwWz9PrRwiGS0Xu9/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_16.py) |
+| SETR-MLA-DeiT   | 480x480   | 16         | 80k       | val  | 52.91| 53.74   | |[config](configs/SETR/SETR_MLA_DeiT_480x480_80k_pascal_context_bs_16.py)|
 | SETR-PUP   | 480x480   | 16         | 80k       | val  | 54.37| 55.27         | [google drive](https://drive.google.com/file/d/1kXZYyqjA96d2DTL-tRvQjixfDBIZFIyR/view?usp=sharing) | [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py) |
+| SETR-PUP-DeiT   | 480x480   | 16         | 80k       | val  | 52.00| 52.50   | |[config](configs/SETR/SETR_PUP_DeiT_480x480_80k_pascal_context_bs_16.py)|
 
 ## Get Started
 
