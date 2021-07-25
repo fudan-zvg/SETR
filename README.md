@@ -82,7 +82,9 @@ mklink /D data %DATA_ROOT%
 | SETR-Naive | 512x512   | 16         | 160k      | Val  | 48.06 | 48.80         | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py) |
 | SETR-MLA   | 512x512   | 8          | 160k      | val  | 47.79 | 50.03         | [google drive](https://drive.google.com/file/d/1Zcaut5LAKYibjyeCcD3m-aG-ETWW6uhA/view?usp=sharing) | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_8.py)  |
 | SETR-MLA   | 512x512   | 16         | 160k      | val  | 48.64 | 50.28         |                                                              | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py) |
+| SETR-MLA-Deit   | 512x512   | 16         | 160k      | val  | 46.15 | 47.71    | |[config](configs/SETR/SETR_MLA_DeiT_512x512_160k_ade20k_bs_16.py) |
 | SETR-PUP   | 512x512   | 16         | 160k      | val  | 48.62 | 50.09         | [google drive](https://drive.google.com/file/d/1hCeiz60ITgVPkWsrKwah8JnwM3G8VVL4/view?usp=sharing) | [config](configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py) |
+| SETR-PUP-Deit   | 512x512   | 16         | 160k      | val  | 46.34 | 47.30    | | [config](configs/SETR/SETR_PUP_DeiT_512x512_160k_ade20k_bs_16.py) |
 
 #### Pascal Context
 
