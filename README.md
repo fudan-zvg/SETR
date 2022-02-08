@@ -6,6 +6,7 @@
 > Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip HS Torr, Li Zhang,
 > *CVPR 2021*
 
+![image](fig/SETR_Poster.pdf)
 
 ## Installation
 
