@@ -40,7 +40,7 @@ def main():
     else:
         mmcv.track_progress(convert_json_to_label, poly_files)
 
-    split_names = ['train', 'val', 'train_extra']
+    split_names = ['train', 'val']
 
     for split in split_names:
         filenames = []
