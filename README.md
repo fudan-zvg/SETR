@@ -1,12 +1,88 @@
-# SEgmentation TRansformers -- SETR
-
+# Journal Extention of SETR
+### SETR
 ![image](fig/image.png)
+### HLG
+![image](fig/hlg-image.png)
 
 > [**Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers**](https://arxiv.org/abs/2012.15840),
 > Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip HS Torr, Li Zhang,
 > *CVPR 2021*
 
+> [**Vision Transformers: From Semantic Segmentation to Dense Prediction**](https://arxiv.org/abs/2012.15840),
+> Li Zhang, Jiachen Lu, Sixiao Zheng, Xinxuan Zhao, Xiatian Zhu, Yanwei Fu, Tao Xiang, Jianfeng Feng
+
 ![image](fig/SETR_Poster.pdf)
+
+## HLG
+HLG classification is under folder `hlg-classification/`.
+#### ImageNet-1K
+
+
+| Model       | Resolution | Params | FLOPs | Top-1 % | Config |Pretrained Model|
+|-------------|:----------:|:------:|:-----:|:-------:|--------|--------
+| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[HLG_Tiny](https://drive.google.com/file/d/1S04DCotIOkP0DaBb8WStQ513z82qT9de/view?usp=sharing)|
+| HLG-Small  | 224        | 24M    | 4.7G  | 82.3    |[hlg_small_224.yaml](hlg-classification/configs/hlg/hlg_small_224.yaml)|
+| HLG-Medium | 224        | 43M    | 9.0G  | 83.6    |[hlg_medium_224.yaml](hlg-classification/configs/hlg/hlg_medium_224.yaml)|
+| HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|
+
+#### Cityscapes
+
+| Method          | Crop Size | Batch size | iteration | set  | mIoU  | model                                                        | config                                                       |
+| --------------- | --------- | ---------- | --------- | ---- | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SETR-HLG-Small      | 768x768   | 16          | 40k       | val  | 81.8 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
+| SETR-HLG-Medium      | 768x768   | 16          | 40k       | val  | 82.5 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
+| SETR-HLG-Large      | 768x768   | 16          | 40k       | val  | 82.9 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
+
+#### ADE20K
+
+| Method        | Crop Size | Batch size | iteration | set | mIoU  | model                                                                                           | Config                                                         |
+| ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | -------------------------------------------------------------- |
+| SETR-HLG-Small    | 512x512   | 16         | 160k      | Val | 47.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
+| SETR-HLG-Medium    | 512x512   | 16         | 160k      | Val | 49.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
+| SETR-HLG-Large    | 512x512   | 16         | 160k      | Val | 49.8 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
+
+
+## SETR
+#### Cityscapes
+
+| Method          | Crop Size | Batch size | iteration | set  | mIoU  | model                                                        | config                                                       |
+| --------------- | --------- | ---------- | --------- | ---- | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| SETR-Naive      | 768x768   | 8          | 40k       | val  | 77.37 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
+| SETR-Naive      | 768x768   | 8          | 80k       | val  | 77.90 | [google drive](https://drive.google.com/file/d/1dplB4wceJhyVRQfZR5AWODywMN90CY0h/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_80k_cityscapes_bs_8.py) |
+| SETR-MLA        | 768x768   | 8          | 40k       | val  | 76.65 | [google drive](https://drive.google.com/file/d/18k26X-xM7BEQZUjzkvroeGV-6XwPgBqN/view?usp=sharing) | [config](configs/SETR/SETR_MLA_768x768_40k_cityscapes_bs_8.py) |
+| SETR-MLA        | 768x768   | 8          | 80k       | val  | 77.24 | [google drive](https://drive.google.com/file/d/1ke6wcsCwP_J-p8sYriCZ3pC8G61bE0v_/view?usp=sharing) | [config](configs/SETR/SETR_MLA_768x768_80k_cityscapes_bs_8.py) |
+| SETR-PUP        | 768x768   | 8          | 40k       | val  | 78.39 | [google drive](https://drive.google.com/file/d/1DcZltdh6eHwmQ5BvCdHudJRgJUjPzS56/view?usp=sharing) | [config](configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py) |
+| SETR-PUP        | 768x768   | 8          | 80k       | val  | 79.34 | [google drive](https://drive.google.com/file/d/1469aYtEAuhT39BrHn0yOv1s71unF85JE/view?usp=sharing) | [config](configs/SETR/SETR_PUP_768x768_80k_cityscapes_bs_8.py) |
+| SETR-Naive-Base | 768x768   | 8          | 40k       | val  | 75.54 | [google drive](https://drive.google.com/file/d/1kGzdSLCazsbgZe0Y1Lo6sNwv9s5V3CAp/view?usp=sharing) | [config](configs/SETR/SETR_Naive_Base_768x768_40k_cityscapes_bs_8.py) |
+| SETR-Naive-Base | 768x768   | 8          | 80k       | val  | 76.25 | [google drive](https://drive.google.com/file/d/1vOD1-PGNfuM9IUvwnm2CrAXsPkadoyW8/view?usp=sharing) | [config](configs/SETR/SETR_Naive_Base_768x768_80k_cityscapes_bs_8.py) |
+| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  | 77.85 |                                                              | [config](configs/SETR/SETR_Naive_DeiT_768x768_40k_cityscapes_bs_8.py) |
+| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  | 78.66 |                                                              | [config](configs/SETR/SETR_Naive_DeiT_768x768_80k_cityscapes_bs_8.py) |
+| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  | 78.04 |                                                              | [config](configs/SETR/SETR_MLA_DeiT_768x768_40k_cityscapes_bs_8.py) |
+| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  | 78.98 |                                                              | [config](configs/SETR/SETR_MLA_DeiT_768x768_80k_cityscapes_bs_8.py) |
+| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  | 78.79 |                                                              | [config](configs/SETR/SETR_PUP_DeiT_768x768_40k_cityscapes_bs_8.py) |
+| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  | 79.45 |                                                              | [config](configs/SETR/SETR_PUP_DeiT_768x768_80k_cityscapes_bs_8.py) |
+
+#### ADE20K
+
+| Method        | Crop Size | Batch size | iteration | set | mIoU  | mIoU(ms+flip) | model                                                                                           | Config                                                         |
+| ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| SETR-Naive    | 512x512   | 16         | 160k      | Val | 48.06 | 48.80         | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
+| SETR-MLA      | 512x512   | 8          | 160k      | val | 47.79 | 50.03         | [google drive](https://drive.google.com/file/d/1Zcaut5LAKYibjyeCcD3m-aG-ETWW6uhA/view?usp=sharing) | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_8.py)       |
+| SETR-MLA      | 512x512   | 16         | 160k      | val | 48.64 | 50.28         |                                                                                                 | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py)      |
+| SETR-MLA-Deit | 512x512   | 16         | 160k      | val | 46.15 | 47.71         |                                                                                                 | [config](configs/SETR/SETR_MLA_DeiT_512x512_160k_ade20k_bs_16.py) |
+| SETR-PUP      | 512x512   | 16         | 160k      | val | 48.62 | 50.09         | [google drive](https://drive.google.com/file/d/1hCeiz60ITgVPkWsrKwah8JnwM3G8VVL4/view?usp=sharing) | [config](configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py)      |
+| SETR-PUP-Deit | 512x512   | 16         | 160k      | val | 46.34 | 47.30         |                                                                                                 | [config](configs/SETR/SETR_PUP_DeiT_512x512_160k_ade20k_bs_16.py) |
+
+#### Pascal Context
+
+| Method        | Crop Size | Batch size | iteration | set | mIoU  | mIoU(ms+flip) | model                                                                                           | Config                                                                |
+| ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| SETR-Naive    | 480x480   | 16         | 80k       | val | 52.89 | 53.61         | [google drive](https://drive.google.com/file/d/140T7-wQ3UOzHA0-6pjO3lik_5Vi5RvqJ/view?usp=sharing) | [config](configs/SETR/SETR_Naive_480x480_80k_pascal_context_bs_16.py)    |
+| SETR-MLA      | 480x480   | 8          | 80k       | val | 54.39 | 55.39         | [google drive](https://drive.google.com/file/d/1XvhUVIMcdcEYUYKudUcV99vOwhisYh61/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_8.py)       |
+| SETR-MLA      | 480x480   | 16         | 80k       | val | 55.01 | 55.83         | [google drive](https://drive.google.com/file/d/1k5CwpKfpNUdAFWOuzwWz9PrRwiGS0Xu9/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_16.py)      |
+| SETR-MLA-DeiT | 480x480   | 16         | 80k       | val | 52.91 | 53.74         |                                                                                                 | [config](configs/SETR/SETR_MLA_DeiT_480x480_80k_pascal_context_bs_16.py) |
+| SETR-PUP      | 480x480   | 16         | 80k       | val | 54.37 | 55.27         | [google drive](https://drive.google.com/file/d/1kXZYyqjA96d2DTL-tRvQjixfDBIZFIyR/view?usp=sharing) | [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py)      |
+| SETR-PUP-DeiT | 480x480   | 16         | 80k       | val | 52.00 | 52.50         |                                                                                                 | [config](configs/SETR/SETR_PUP_DeiT_480x480_80k_pascal_context_bs_16.py) |
 
 ## Installation
 
@@ -55,50 +131,6 @@ pip install -r requirements/optional.txt
 
 mklink /D data %DATA_ROOT%
 ```
-
-## Main results
-
-
-#### Cityscapes
-
-| Method          | Crop Size | Batch size | iteration | set  | mIoU  | model                                                        | config                                                       |
-| --------------- | --------- | ---------- | --------- | ---- | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| SETR-Naive      | 768x768   | 8          | 40k       | val  | 77.37 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
-| SETR-Naive      | 768x768   | 8          | 80k       | val  | 77.90 | [google drive](https://drive.google.com/file/d/1dplB4wceJhyVRQfZR5AWODywMN90CY0h/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_80k_cityscapes_bs_8.py) |
-| SETR-MLA        | 768x768   | 8          | 40k       | val  | 76.65 | [google drive](https://drive.google.com/file/d/18k26X-xM7BEQZUjzkvroeGV-6XwPgBqN/view?usp=sharing) | [config](configs/SETR/SETR_MLA_768x768_40k_cityscapes_bs_8.py) |
-| SETR-MLA        | 768x768   | 8          | 80k       | val  | 77.24 | [google drive](https://drive.google.com/file/d/1ke6wcsCwP_J-p8sYriCZ3pC8G61bE0v_/view?usp=sharing) | [config](configs/SETR/SETR_MLA_768x768_80k_cityscapes_bs_8.py) |
-| SETR-PUP        | 768x768   | 8          | 40k       | val  | 78.39 | [google drive](https://drive.google.com/file/d/1DcZltdh6eHwmQ5BvCdHudJRgJUjPzS56/view?usp=sharing) | [config](configs/SETR/SETR_PUP_768x768_40k_cityscapes_bs_8.py) |
-| SETR-PUP        | 768x768   | 8          | 80k       | val  | 79.34 | [google drive](https://drive.google.com/file/d/1469aYtEAuhT39BrHn0yOv1s71unF85JE/view?usp=sharing) | [config](configs/SETR/SETR_PUP_768x768_80k_cityscapes_bs_8.py) |
-| SETR-Naive-Base | 768x768   | 8          | 40k       | val  | 75.54 | [google drive](https://drive.google.com/file/d/1kGzdSLCazsbgZe0Y1Lo6sNwv9s5V3CAp/view?usp=sharing) | [config](configs/SETR/SETR_Naive_Base_768x768_40k_cityscapes_bs_8.py) |
-| SETR-Naive-Base | 768x768   | 8          | 80k       | val  | 76.25 | [google drive](https://drive.google.com/file/d/1vOD1-PGNfuM9IUvwnm2CrAXsPkadoyW8/view?usp=sharing) | [config](configs/SETR/SETR_Naive_Base_768x768_80k_cityscapes_bs_8.py) |
-| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  | 77.85 |                                                              | [config](configs/SETR/SETR_Naive_DeiT_768x768_40k_cityscapes_bs_8.py) |
-| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  | 78.66 |                                                              | [config](configs/SETR/SETR_Naive_DeiT_768x768_80k_cityscapes_bs_8.py) |
-| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  | 78.04 |                                                              | [config](configs/SETR/SETR_MLA_DeiT_768x768_40k_cityscapes_bs_8.py) |
-| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  | 78.98 |                                                              | [config](configs/SETR/SETR_MLA_DeiT_768x768_80k_cityscapes_bs_8.py) |
-| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  | 78.79 |                                                              | [config](configs/SETR/SETR_PUP_DeiT_768x768_40k_cityscapes_bs_8.py) |
-| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  | 79.45 |                                                              | [config](configs/SETR/SETR_PUP_DeiT_768x768_80k_cityscapes_bs_8.py) |
-
-#### ADE20K
-
-| Method        | Crop Size | Batch size | iteration | set | mIoU  | mIoU(ms+flip) | model                                                                                           | Config                                                         |
-| ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| SETR-Naive    | 512x512   | 16         | 160k      | Val | 48.06 | 48.80         | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
-| SETR-MLA      | 512x512   | 8          | 160k      | val | 47.79 | 50.03         | [google drive](https://drive.google.com/file/d/1Zcaut5LAKYibjyeCcD3m-aG-ETWW6uhA/view?usp=sharing) | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_8.py)       |
-| SETR-MLA      | 512x512   | 16         | 160k      | val | 48.64 | 50.28         |                                                                                                 | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py)      |
-| SETR-MLA-Deit | 512x512   | 16         | 160k      | val | 46.15 | 47.71         |                                                                                                 | [config](configs/SETR/SETR_MLA_DeiT_512x512_160k_ade20k_bs_16.py) |
-| SETR-PUP      | 512x512   | 16         | 160k      | val | 48.62 | 50.09         | [google drive](https://drive.google.com/file/d/1hCeiz60ITgVPkWsrKwah8JnwM3G8VVL4/view?usp=sharing) | [config](configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py)      |
-| SETR-PUP-Deit | 512x512   | 16         | 160k      | val | 46.34 | 47.30         |                                                                                                 | [config](configs/SETR/SETR_PUP_DeiT_512x512_160k_ade20k_bs_16.py) |
-
-#### Pascal Context
-
-| Method        | Crop Size | Batch size | iteration | set | mIoU  | mIoU(ms+flip) | model                                                                                           | Config                                                                |
-| ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| SETR-Naive    | 480x480   | 16         | 80k       | val | 52.89 | 53.61         | [google drive](https://drive.google.com/file/d/140T7-wQ3UOzHA0-6pjO3lik_5Vi5RvqJ/view?usp=sharing) | [config](configs/SETR/SETR_Naive_480x480_80k_pascal_context_bs_16.py)    |
-| SETR-MLA      | 480x480   | 8          | 80k       | val | 54.39 | 55.39         | [google drive](https://drive.google.com/file/d/1XvhUVIMcdcEYUYKudUcV99vOwhisYh61/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_8.py)       |
-| SETR-MLA      | 480x480   | 16         | 80k       | val | 55.01 | 55.83         | [google drive](https://drive.google.com/file/d/1k5CwpKfpNUdAFWOuzwWz9PrRwiGS0Xu9/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_16.py)      |
-| SETR-MLA-DeiT | 480x480   | 16         | 80k       | val | 52.91 | 53.74         |                                                                                                 | [config](configs/SETR/SETR_MLA_DeiT_480x480_80k_pascal_context_bs_16.py) |
-| SETR-PUP      | 480x480   | 16         | 80k       | val | 54.37 | 55.27         | [google drive](https://drive.google.com/file/d/1kXZYyqjA96d2DTL-tRvQjixfDBIZFIyR/view?usp=sharing) | [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py)      |
-| SETR-PUP-DeiT | 480x480   | 16         | 80k       | val | 52.00 | 52.50         |                                                                                                 | [config](configs/SETR/SETR_PUP_DeiT_480x480_80k_pascal_context_bs_16.py) |
 
 ## Get Started
 

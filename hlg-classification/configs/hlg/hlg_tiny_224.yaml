@@ -1,0 +1,8 @@
+MODEL:
+  TYPE: hlg
+  NAME: hlg_tiny_224
+  DROP_PATH_RATE: 0.2
+  HLG:
+    EMBED_DIMS: [64, 128, 256, 512]
+    DEPTHS: [ 2, 2, 6, 2 ]
+    NUM_HEADS: [2, 4, 8, 16]
