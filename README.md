@@ -20,10 +20,10 @@ HLG classification is under folder `hlg-classification/`.
 
 | Model       | Resolution | Params | FLOPs | Top-1 % | Config |Pretrained Model|
 |-------------|:----------:|:------:|:-----:|:-------:|--------|--------
-| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[HLG_Tiny](https://drive.google.com/file/d/1S04DCotIOkP0DaBb8WStQ513z82qT9de/view?usp=sharing)|
-| HLG-Small  | 224        | 24M    | 4.7G  | 82.3    |[hlg_small_224.yaml](hlg-classification/configs/hlg/hlg_small_224.yaml)|
-| HLG-Medium | 224        | 43M    | 9.0G  | 83.6    |[hlg_medium_224.yaml](hlg-classification/configs/hlg/hlg_medium_224.yaml)|
-| HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|
+| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[google drive](https://drive.google.com/file/d/1S04DCotIOkP0DaBb8WStQ513z82qT9de/view?usp=sharing)|
+| HLG-Small  | 224        | 24M    | 4.7G  | 82.3    |[hlg_small_224.yaml](hlg-classification/configs/hlg/hlg_small_224.yaml)|[google drive]()|
+| HLG-Medium | 224        | 43M    | 9.0G  | 83.6    |[hlg_medium_224.yaml](hlg-classification/configs/hlg/hlg_medium_224.yaml)|[google drive]()|
+| HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|[google drive]()|
 
 #### Cityscapes
 
@@ -55,12 +55,12 @@ HLG classification is under folder `hlg-classification/`.
 | SETR-PUP        | 768x768   | 8          | 80k       | val  | 79.34 | [google drive](https://drive.google.com/file/d/1469aYtEAuhT39BrHn0yOv1s71unF85JE/view?usp=sharing) | [config](configs/SETR/SETR_PUP_768x768_80k_cityscapes_bs_8.py) |
 | SETR-Naive-Base | 768x768   | 8          | 40k       | val  | 75.54 | [google drive](https://drive.google.com/file/d/1kGzdSLCazsbgZe0Y1Lo6sNwv9s5V3CAp/view?usp=sharing) | [config](configs/SETR/SETR_Naive_Base_768x768_40k_cityscapes_bs_8.py) |
 | SETR-Naive-Base | 768x768   | 8          | 80k       | val  | 76.25 | [google drive](https://drive.google.com/file/d/1vOD1-PGNfuM9IUvwnm2CrAXsPkadoyW8/view?usp=sharing) | [config](configs/SETR/SETR_Naive_Base_768x768_80k_cityscapes_bs_8.py) |
-| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  | 77.85 |                                                              | [config](configs/SETR/SETR_Naive_DeiT_768x768_40k_cityscapes_bs_8.py) |
-| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  | 78.66 |                                                              | [config](configs/SETR/SETR_Naive_DeiT_768x768_80k_cityscapes_bs_8.py) |
-| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  | 78.04 |                                                              | [config](configs/SETR/SETR_MLA_DeiT_768x768_40k_cityscapes_bs_8.py) |
-| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  | 78.98 |                                                              | [config](configs/SETR/SETR_MLA_DeiT_768x768_80k_cityscapes_bs_8.py) |
-| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  | 78.79 |                                                              | [config](configs/SETR/SETR_PUP_DeiT_768x768_40k_cityscapes_bs_8.py) |
-| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  | 79.45 |                                                              | [config](configs/SETR/SETR_PUP_DeiT_768x768_80k_cityscapes_bs_8.py) |
+| SETR-Naive-DeiT | 768x768   | 8          | 40k       | val  | 77.85 |                           [google drive]()                                   | [config](configs/SETR/SETR_Naive_DeiT_768x768_40k_cityscapes_bs_8.py) |
+| SETR-Naive-DeiT | 768x768   | 8          | 80k       | val  | 78.66 |                           [google drive]()                                   | [config](configs/SETR/SETR_Naive_DeiT_768x768_80k_cityscapes_bs_8.py) |
+| SETR-MLA-DeiT   | 768x768   | 8          | 40k       | val  | 78.04 |                            [google drive]()                                  | [config](configs/SETR/SETR_MLA_DeiT_768x768_40k_cityscapes_bs_8.py) |
+| SETR-MLA-DeiT   | 768x768   | 8          | 80k       | val  | 78.98 |                            [google drive]()                                  | [config](configs/SETR/SETR_MLA_DeiT_768x768_80k_cityscapes_bs_8.py) |
+| SETR-PUP-DeiT   | 768x768   | 8          | 40k       | val  | 78.79 |                            [google drive]()                                  | [config](configs/SETR/SETR_PUP_DeiT_768x768_40k_cityscapes_bs_8.py) |
+| SETR-PUP-DeiT   | 768x768   | 8          | 80k       | val  | 79.45 |                            [google drive]()                                  | [config](configs/SETR/SETR_PUP_DeiT_768x768_80k_cityscapes_bs_8.py) |
 
 #### ADE20K
 
@@ -68,10 +68,10 @@ HLG classification is under folder `hlg-classification/`.
 | ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
 | SETR-Naive    | 512x512   | 16         | 160k      | Val | 48.06 | 48.80         | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
 | SETR-MLA      | 512x512   | 8          | 160k      | val | 47.79 | 50.03         | [google drive](https://drive.google.com/file/d/1Zcaut5LAKYibjyeCcD3m-aG-ETWW6uhA/view?usp=sharing) | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_8.py)       |
-| SETR-MLA      | 512x512   | 16         | 160k      | val | 48.64 | 50.28         |                                                                                                 | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py)      |
-| SETR-MLA-Deit | 512x512   | 16         | 160k      | val | 46.15 | 47.71         |                                                                                                 | [config](configs/SETR/SETR_MLA_DeiT_512x512_160k_ade20k_bs_16.py) |
+| SETR-MLA      | 512x512   | 16         | 160k      | val | 48.64 | 50.28         |                     [google drive]()                                                                            | [config](configs/SETR/SETR_MLA_512x512_160k_ade20k_bs_16.py)      |
+| SETR-MLA-Deit | 512x512   | 16         | 160k      | val | 46.15 | 47.71         |                         [google drive]()                                                                        | [config](configs/SETR/SETR_MLA_DeiT_512x512_160k_ade20k_bs_16.py) |
 | SETR-PUP      | 512x512   | 16         | 160k      | val | 48.62 | 50.09         | [google drive](https://drive.google.com/file/d/1hCeiz60ITgVPkWsrKwah8JnwM3G8VVL4/view?usp=sharing) | [config](configs/SETR/SETR_PUP_512x512_160k_ade20k_bs_16.py)      |
-| SETR-PUP-Deit | 512x512   | 16         | 160k      | val | 46.34 | 47.30         |                                                                                                 | [config](configs/SETR/SETR_PUP_DeiT_512x512_160k_ade20k_bs_16.py) |
+| SETR-PUP-Deit | 512x512   | 16         | 160k      | val | 46.34 | 47.30         |                 [google drive]()                                                                                | [config](configs/SETR/SETR_PUP_DeiT_512x512_160k_ade20k_bs_16.py) |
 
 #### Pascal Context
 
@@ -80,9 +80,9 @@ HLG classification is under folder `hlg-classification/`.
 | SETR-Naive    | 480x480   | 16         | 80k       | val | 52.89 | 53.61         | [google drive](https://drive.google.com/file/d/140T7-wQ3UOzHA0-6pjO3lik_5Vi5RvqJ/view?usp=sharing) | [config](configs/SETR/SETR_Naive_480x480_80k_pascal_context_bs_16.py)    |
 | SETR-MLA      | 480x480   | 8          | 80k       | val | 54.39 | 55.39         | [google drive](https://drive.google.com/file/d/1XvhUVIMcdcEYUYKudUcV99vOwhisYh61/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_8.py)       |
 | SETR-MLA      | 480x480   | 16         | 80k       | val | 55.01 | 55.83         | [google drive](https://drive.google.com/file/d/1k5CwpKfpNUdAFWOuzwWz9PrRwiGS0Xu9/view?usp=sharing) | [config](configs/SETR/SETR_MLA_480x480_80k_pascal_context_bs_16.py)      |
-| SETR-MLA-DeiT | 480x480   | 16         | 80k       | val | 52.91 | 53.74         |                                                                                                 | [config](configs/SETR/SETR_MLA_DeiT_480x480_80k_pascal_context_bs_16.py) |
+| SETR-MLA-DeiT | 480x480   | 16         | 80k       | val | 52.91 | 53.74         |                    [google drive]()                                                                             | [config](configs/SETR/SETR_MLA_DeiT_480x480_80k_pascal_context_bs_16.py) |
 | SETR-PUP      | 480x480   | 16         | 80k       | val | 54.37 | 55.27         | [google drive](https://drive.google.com/file/d/1kXZYyqjA96d2DTL-tRvQjixfDBIZFIyR/view?usp=sharing) | [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py)      |
-| SETR-PUP-DeiT | 480x480   | 16         | 80k       | val | 52.00 | 52.50         |                                                                                                 | [config](configs/SETR/SETR_PUP_DeiT_480x480_80k_pascal_context_bs_16.py) |
+| SETR-PUP-DeiT | 480x480   | 16         | 80k       | val | 52.00 | 52.50         |                      [google drive]()                                                                           | [config](configs/SETR/SETR_PUP_DeiT_480x480_80k_pascal_context_bs_16.py) |
 
 ## Installation
 
