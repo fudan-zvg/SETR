@@ -1,4 +1,4 @@
-# Journal Extention of SETR
+# SEgmentation TRansformers -- SETR
 ### SETR
 ![image](fig/image.png)
 ### HLG
@@ -29,17 +29,17 @@ HLG classification is under folder `hlg-classification/`.
 
 | Method          | Crop Size | Batch size | iteration | set  | mIoU  | model                                                        | config                                                       |
 | --------------- | --------- | ---------- | --------- | ---- | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| SETR-HLG-Small      | 768x768   | 16          | 40k       | val  | 81.8 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
-| SETR-HLG-Medium      | 768x768   | 16          | 40k       | val  | 82.5 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
-| SETR-HLG-Large      | 768x768   | 16          | 40k       | val  | 82.9 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/SETR/SETR_Naive_768x768_40k_cityscapes_bs_8.py) |
+| SETR-HLG-Small      | 768x768   | 16          | 40k       | val  | 81.8 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_small_768x768_40k_cityscapes_bs_16.py) |
+| SETR-HLG-Medium      | 768x768   | 16          | 40k       | val  | 82.5 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_medium_768x768_40k_cityscapes_bs_16.py) |
+| SETR-HLG-Large      | 768x768   | 16          | 40k       | val  | 82.9 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_large_768x768_40k_cityscapes_bs_16.py) |
 
 #### ADE20K
 
 | Method        | Crop Size | Batch size | iteration | set | mIoU  | model                                                                                           | Config                                                         |
 | ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | -------------------------------------------------------------- |
-| SETR-HLG-Small    | 512x512   | 16         | 160k      | Val | 47.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
-| SETR-HLG-Medium    | 512x512   | 16         | 160k      | Val | 49.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
-| SETR-HLG-Large    | 512x512   | 16         | 160k      | Val | 49.8 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/SETR/SETR_Naive_512x512_160k_ade20k_bs_16.py)    |
+| SETR-HLG-Small    | 512x512   | 16         | 160k      | Val | 47.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_small_512x512_160k_ade20k_bs_16.py)    |
+| SETR-HLG-Medium    | 512x512   | 16         | 160k      | Val | 49.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_medium_512x512_160k_ade20k_bs_16.py)    |
+| SETR-HLG-Large    | 512x512   | 16         | 160k      | Val | 49.8 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_large_512x512_160k_ade20k_bs_16.py)    |
 
 
 ## SETR

@@ -6,8 +6,9 @@ from .resnet import ResNet, ResNetV1c, ResNetV1d
 from .resnext import ResNeXt
 from .vit import VisionTransformer
 from .vit_mla import VIT_MLA
+from .hlg import HLGTransformer
 
 __all__ = [
     'ResNet', 'ResNetV1c', 'ResNetV1d', 'ResNeXt', 'HRNet', 'FastSCNN',
-    'ResNeSt', 'MobileNetV2', 'VisionTransformer', 'VIT_MLA'
+    'ResNeSt', 'MobileNetV2', 'VisionTransformer', 'VIT_MLA', 'HLGTransformer'
 ]
