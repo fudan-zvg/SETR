@@ -19,7 +19,7 @@ HLG classification is under folder `hlg-classification/`.
 
 | Model       | Resolution | Params | FLOPs | Top-1 % | Config |Pretrained Model|
 |-------------|:----------:|:------:|:-----:|:-------:|--------|--------
-| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[google drive](https://drive.google.com/file/d/1S04DCotIOkP0DaBb8WStQ513z82qT9de/view?usp=sharing)|
+| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[google drive]()|
 | HLG-Small  | 224        | 24M    | 4.7G  | 82.3    |[hlg_small_224.yaml](hlg-classification/configs/hlg/hlg_small_224.yaml)|[google drive]()|
 | HLG-Medium | 224        | 43M    | 9.0G  | 83.6    |[hlg_medium_224.yaml](hlg-classification/configs/hlg/hlg_medium_224.yaml)|[google drive]()|
 | HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|[google drive]()|
