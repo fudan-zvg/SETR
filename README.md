@@ -11,7 +11,6 @@
 > [**Vision Transformers: From Semantic Segmentation to Dense Prediction**](https://arxiv.org/abs/2012.15840),
 > Li Zhang, Jiachen Lu, Sixiao Zheng, Xinxuan Zhao, Xiatian Zhu, Yanwei Fu, Tao Xiang, Jianfeng Feng
 
-![image](fig/SETR_Poster.pdf)
 
 ## HLG
 HLG classification is under folder `hlg-classification/`.
