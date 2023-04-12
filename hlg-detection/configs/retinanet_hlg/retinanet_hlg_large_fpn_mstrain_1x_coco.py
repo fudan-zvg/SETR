@@ -1,21 +1,20 @@
 _base_ = [
-    '../_base_/models/retinanet_hlg_share_fpn.py',
+    '../_base_/models/retinanet_hlg_fpn.py',
     '../_base_/datasets/coco_detection.py',
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 model = dict(
     backbone=dict(
-        type='DWShareIntReDownHLG',
-        pretrained='pretrain/pvt_small_dw_share_redown_h0_False_downsample_dwconvbn_h0_avgpool_dpb_ema.pth',
+        pretrained='pretrain/hlg_large.pth',
         
         img_size=768,
         in_chans=3,
         patch_size=4,
         num_classes=19,
         
-        embed_dims=[96, 192, 384, 768],
-        num_heads=[3, 6, 12, 24],
-        depths=[2, 2, 6, 2],
+        embed_dims=[128, 256, 512, 1024],
+        num_heads=[4, 8, 16, 32],
+        depths=[2, 2, 14, 2],
         
         use_checkpoint=False,
         h0_att=False,
@@ -24,11 +23,11 @@ model = dict(
         h0_h1_method='mean',
         crs_interval=[8, 4, 2, 1],
         dynamic_position_bias=True,
-        drop_path_rate=0.1
+        drop_path_rate=0.3
     ),
     neck=dict(
         type='FPN',
-        in_channels=[96, 192, 384, 768],)
+        in_channels=[128, 256, 512, 1024],)
     )
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)

@@ -41,6 +41,14 @@ HLG classification is under folder `hlg-classification/`.
 | SETR-HLG-Large    | 512x512   | 16         | 160k      | Val | 49.8 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_large_512x512_160k_ade20k_bs_16.py)    |
 
 
+#### COCO
+HLG detection is under folder `hlg-detection/`.
+|    Backbone     |   Lr schd    | box AP |                                                        Config                                                         |                                                                                                                                                         Download                                                                                                                                                          |
+| :-------------: | :----------: | :------------: | :-------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|    SETR-HLG-Small    |      1x      |  44.4 |    [config](hlg-detection/configs/retinanet_hlg/retinanet_hlg_small_fpn_mstrain_1x_coco.py)     |           [google drive]()           |
+|    SETR-HLG-Medium    |      1x      |  46.6 |    [config](hlg-detection/configs/retinanet_hlg/retinanet_hlg_medium_fpn_mstrain_1x_coco.py)     |           [google drive]()           |
+|    SETR-HLG-Large    |      1x      |  47.7 |    [config](hlg-detection/configs/retinanet_hlg/retinanet_hlg_large_fpn_mstrain_1x_coco.py)     |           [google drive]()           |
+
 ## SETR
 #### Cityscapes
 

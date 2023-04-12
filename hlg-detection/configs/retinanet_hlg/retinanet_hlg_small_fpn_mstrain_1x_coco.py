@@ -1,12 +1,12 @@
 _base_ = [
-    '../_base_/models/retinanet_hlg_share_fpn.py',
+    '../_base_/models/retinanet_hlg_fpn.py',
     '../_base_/datasets/coco_detection.py',
     '../_base_/schedules/schedule_1x.py', '../_base_/default_runtime.py'
 ]
 model = dict(
     backbone=dict(
-        type='DWShareIntReDownHLG',
-        pretrained='pretrain/pvt_small_dw_share_redown_h0_False_downsample_dwconvbn_h0_avgpool_dpb_ema.pth',
+        type='HLGTransformer',
+        pretrained='pretrain/hlg_small.pth',
         
         img_size=768,
         in_chans=3,
