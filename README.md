@@ -12,43 +12,6 @@
 > Li Zhang, Jiachen Lu, Sixiao Zheng, Xinxuan Zhao, Xiatian Zhu, Yanwei Fu, Tao Xiang, Jianfeng Feng
 
 
-## HLG
-HLG classification is under folder `hlg-classification/`.
-#### ImageNet-1K
-
-
-| Model       | Resolution | Params | FLOPs | Top-1 % | Config |Pretrained Model|
-|-------------|:----------:|:------:|:-----:|:-------:|--------|--------
-| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[google drive]()|
-| HLG-Small  | 224        | 24M    | 4.7G  | 82.3    |[hlg_small_224.yaml](hlg-classification/configs/hlg/hlg_small_224.yaml)|[google drive]()|
-| HLG-Medium | 224        | 43M    | 9.0G  | 83.6    |[hlg_medium_224.yaml](hlg-classification/configs/hlg/hlg_medium_224.yaml)|[google drive]()|
-| HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|[google drive]()|
-
-#### Cityscapes
-
-| Method          | Crop Size | Batch size | iteration | set  | mIoU  | model                                                        | config                                                       |
-| --------------- | --------- | ---------- | --------- | ---- | ----- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| SETR-HLG-Small      | 768x768   | 16          | 40k       | val  | 81.8 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_small_768x768_40k_cityscapes_bs_16.py) |
-| SETR-HLG-Medium      | 768x768   | 16          | 40k       | val  | 82.5 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_medium_768x768_40k_cityscapes_bs_16.py) |
-| SETR-HLG-Large      | 768x768   | 16          | 40k       | val  | 82.9 | [google drive](https://drive.google.com/file/d/1f3b7I7IwKx-hcr16afjcxkAyXyeNQCAz/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_large_768x768_40k_cityscapes_bs_16.py) |
-
-#### ADE20K
-
-| Method        | Crop Size | Batch size | iteration | set | mIoU  | model                                                                                           | Config                                                         |
-| ------------- | --------- | ---------- | --------- | --- | ----- | ------------- | -------------------------------------------------------------- |
-| SETR-HLG-Small    | 512x512   | 16         | 160k      | Val | 47.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_small_512x512_160k_ade20k_bs_16.py)    |
-| SETR-HLG-Medium    | 512x512   | 16         | 160k      | Val | 49.3 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_medium_512x512_160k_ade20k_bs_16.py)    |
-| SETR-HLG-Large    | 512x512   | 16         | 160k      | Val | 49.8 | [google drive](https://drive.google.com/file/d/17ZlPBcJRKO3c3XoAeNutrExIETu23qKY/view?usp=sharing) | [config](configs/setr_hlg/setr_pup_hlg_large_512x512_160k_ade20k_bs_16.py)    |
-
-
-#### COCO
-HLG detection is under folder `hlg-detection/`.
-|    Backbone     |   Lr schd    | box AP |                                                        Config                                                         |                                                                                                                                                         Download                                                                                                                                                          |
-| :-------------: | :----------: | :------------: | :-------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-|    SETR-HLG-Small    |      1x      |  44.4 |    [config](hlg-detection/configs/retinanet_hlg/retinanet_hlg_small_fpn_mstrain_1x_coco.py)     |           [google drive]()           |
-|    SETR-HLG-Medium    |      1x      |  46.6 |    [config](hlg-detection/configs/retinanet_hlg/retinanet_hlg_medium_fpn_mstrain_1x_coco.py)     |           [google drive]()           |
-|    SETR-HLG-Large    |      1x      |  47.7 |    [config](hlg-detection/configs/retinanet_hlg/retinanet_hlg_large_fpn_mstrain_1x_coco.py)     |           [google drive]()           |
-
 ## SETR
 #### Cityscapes
 
@@ -90,6 +53,20 @@ HLG detection is under folder `hlg-detection/`.
 | SETR-MLA-DeiT | 480x480   | 16         | 80k       | val | 52.91 | 53.74         |                    [google drive]()                                                                             | [config](configs/SETR/SETR_MLA_DeiT_480x480_80k_pascal_context_bs_16.py) |
 | SETR-PUP      | 480x480   | 16         | 80k       | val | 54.37 | 55.27         | [google drive](https://drive.google.com/file/d/1kXZYyqjA96d2DTL-tRvQjixfDBIZFIyR/view?usp=sharing) | [config](configs/SETR/SETR_PUP_480x480_80k_pascal_context_bs_16.py)      |
 | SETR-PUP-DeiT | 480x480   | 16         | 80k       | val | 52.00 | 52.50         |                      [google drive]()                                                                           | [config](configs/SETR/SETR_PUP_DeiT_480x480_80k_pascal_context_bs_16.py) |
+
+
+## HLG
+HLG classification is under folder `hlg-classification/`.
+#### ImageNet-1K
+
+
+| Model       | Resolution | Params | FLOPs | Top-1 % | Config |Pretrained Model|
+|-------------|:----------:|:------:|:-----:|:-------:|--------|--------
+| HLG-Tiny   | 224        | 11M    | 2.1G  | 81.1    |[hlg_tiny_224.yaml](hlg-classification/configs/hlg/hlg_tiny_224.yaml)|[google drive]()|
+| HLG-Small  | 224        | 24M    | 4.7G  | 82.3    |[hlg_small_224.yaml](hlg-classification/configs/hlg/hlg_small_224.yaml)|[google drive]()|
+| HLG-Medium | 224        | 43M    | 9.0G  | 83.6    |[hlg_medium_224.yaml](hlg-classification/configs/hlg/hlg_medium_224.yaml)|[google drive]()|
+| HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|[google drive]()|
+
 
 ## Installation
 
