@@ -54,9 +54,8 @@
 
 
 ## HLG
-HLG classification is under folder `hlg-classification/`.
 #### ImageNet-1K
-
+HLG classification is under folder `hlg-classification/`.
 
 | Model       | Resolution | Params | FLOPs | Top-1 % | Config |Pretrained Model|
 |-------------|:----------:|:------:|:-----:|:-------:|--------|--------
@@ -66,6 +65,7 @@ HLG classification is under folder `hlg-classification/`.
 | HLG-Large  | 224        | 84M    | 15.9G | 84.1    |[hlg_large_224.yaml](hlg-classification/configs/hlg/hlg_large_224.yaml)|[google drive](https://drive.google.com/file/d/1IDN-oNEL58w702E_LntvUetChNSDSerH/view?usp=share_link)|
 
 #### Cityscapes
+HLG segmentation shares the same folder as SETR.
 
 | Method          | Crop Size | Batch size | iteration | set  | mIoU  |  config                                                       |
 | --------------- | --------- | ---------- | --------- | ---- | ----- | ------------------------------------------------------------ |
@@ -74,6 +74,7 @@ HLG classification is under folder `hlg-classification/`.
 | SETR-HLG-Large      | 768x768   | 16          | 40k       | val  | 82.9 |  [config](configs/setr_hlg/setr_pup_hlg_large_768x768_40k_cityscapes_bs_16.py) |
 
 #### ADE20K
+HLG segmentation shares the same folder as SETR.
 
 | Method        | Crop Size | Batch size | iteration | set | mIoU  | Config                                                         |
 | ------------- | --------- | ---------- | --------- | --- | ----- | -------------------------------------------------------------- |
