@@ -4,12 +4,12 @@
 
 ![image](fig/image.png)
 
-> [**Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers**](https://arxiv.org/abs/2012.15840),
-> Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip HS Torr, Li Zhang,
+> [**Rethinking Semantic Segmentation from a Sequence-to-Sequence Perspective with Transformers**](https://arxiv.org/abs/2012.15840) <br>
+> Sixiao Zheng, Jiachen Lu, Hengshuang Zhao, Xiatian Zhu, Zekun Luo, Yabiao Wang, Yanwei Fu, Jianfeng Feng, Tao Xiang, Philip HS Torr, Li Zhang <br>
 > *CVPR 2021*
 
-> [**Vision Transformers: From Semantic Segmentation to Dense Prediction**](https://link.springer.com/article/10.1007/s11263-024-02173-w) [[Springer](https://link.springer.com/article/10.1007/s11263-024-02173-w)] [[arxiv](https://arxiv.org/abs/2207.09339)],
-> Li Zhang, Jiachen Lu, Sixiao Zheng, Xinxuan Zhao, Xiatian Zhu, Yanwei Fu, Tao Xiang, Jianfeng Feng
+> [**Vision Transformers: From Semantic Segmentation to Dense Prediction**](https://link.springer.com/article/10.1007/s11263-024-02173-w) [[Springer](https://link.springer.com/article/10.1007/s11263-024-02173-w)] [[arxiv](https://arxiv.org/abs/2207.09339)] <br>
+> Li Zhang, Jiachen Lu, Sixiao Zheng, Xinxuan Zhao, Xiatian Zhu, Yanwei Fu, Tao Xiang, Jianfeng Feng <br>
 > *IJCV 2024 July*
 
 ## SETR
