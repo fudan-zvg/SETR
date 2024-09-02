@@ -248,10 +248,12 @@ Please see [getting_started.md](docs/getting_started.md) for the more basic usag
 
 ```bibtex
 @article{SETR-HLG,
-    title={Vision Transformers: From Semantic Segmentation to Dense Prediction}, 
-    author={Zhang, Li and Lu, Jiachen and Zheng, Sixia and Zhao, Xinxuan and Zhu, Xiatian and Fu, Yanwei and Xiang Tao and Feng, Jianfeng},
-    journal={arXiv},
-    year={2023}
+  title={Vision transformers: From semantic segmentation to dense prediction},
+  author={Zhang, Li and Lu, Jiachen and Zheng, Sixiao and Zhao, Xinxuan and Zhu, Xiatian and Fu, Yanwei and Xiang, Tao and Feng, Jianfeng and Torr, Philip HS},
+  journal={International Journal of Computer Vision},
+  pages={1--21},
+  year={2024},
+  publisher={Springer}
 }
 ```
 
