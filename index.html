@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SETR</title><meta name="description" content="Rethinking Semantic Segmentation from"><link rel="canonical" href="https://logosintelligencelab.github.io/SETR/"><meta property="og:title" content="SETR"><meta property="og:url" content="https://logosintelligencelab.github.io/SETR/"><link rel="stylesheet" href="./style.css"></head>
+<body id="top-of-page"><main><div class="text-center">
+    <h1>Rethinking Semantic Segmentation from </h1>
+    <h1>a Sequence-to-Sequence Perspective </h1>
+    <h1>with Transformers</h1>
+    <br>
+    <h6>
+        Sixiao Zheng<sup>1</sup> &ensp;
+        Jiachen Lu<sup>1</sup> &ensp;
+        <a href="https://hszhao.github.io" target="_blank" rel="noopener noreferrer">Hengshuang Zhao</a><sup>2</sup> &ensp;
+        <a href="https://xiatian-zhu.github.io" target="_blank" rel="noopener noreferrer">Xiatian Zhu</a><sup>3</sup> &ensp;
+        Zekun Luo<sup>4</sup> &ensp;
+        Yabiao Wang<sup>4</sup> &ensp;
+        <br>
+        <a href="https://yanweifu.github.io" target="_blank" rel="noopener noreferrer">Yanwei Fu</a><sup>1</sup> &ensp;&ensp;
+        Jianfeng Feng<sup>1</sup> &ensp;&ensp;
+        <a href="https://scholar.google.com/citations?user=MeS5d4gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Tao Xiang</a><sup>3,5</sup> &ensp;&ensp;
+        <a href="https://scholar.google.com/citations?user=kPxa2w0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Philip H.S. Torr</a><sup>2</sup> &ensp;&ensp;
+        <a href="http://www.robots.ox.ac.uk/~lz/" target="_blank" rel="noopener noreferrer">Li Zhang</a><sup>1 †</sup>
+    </h6>
+    <br>
+    <h6>
+        <sup>1</sup>Fudan University &ensp;&ensp;
+        <sup>2</sup>University of Oxford &ensp;&ensp;
+        <sup>3</sup>University of Surrey &ensp;&ensp;
+        <sup>4</sup>Tencent Youtu Lab &ensp;&ensp;
+        <sup>5</sup>Facebook AI
+    </h6>
+
+    <h2>
+        <a href="https://arxiv.org/abs/2012.15840" target="_blank" rel="noopener noreferrer">Paper</a> &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+        <a href="https://github.com/LogosIntelligenceLab/SETR" target="_blank" rel="noopener noreferrer">Code</a>
+    </h2>
+</div>
+
+<div class="text-center">
+    <h2>Abstract</h2>
+</div>
+<div class="row">
+    <p>
+        Most recent semantic segmentation methods adopt a fully-convolutional network (FCN) with an encoder-decoder architecture. The encoder progressively reduces the spatial resolution and learns more abstract/semantic visual concepts with larger receptive fields.  Since context modeling is critical for segmentation, the latest efforts have been focused on increasing the receptive field, through either dilated/atrous convolutions or inserting attention modules. However, the encoder-decoder based FCN architecture remains unchanged. In this paper, we aim to provide an alternative perspective by treating semantic segmentation as a sequence-to-sequence prediction task. Specifically, we deploy a pure transformer (ie, without convolution and resolution reduction) to encode an image as a sequence of patches.  With the global context modeled in every layer of the transformer, this simple encoder can be combined with a decoder in simple design to provide a powerful segmentation model, termed SEgmentation TRansformer (SETR). Extensive experiments show that SETR achieves new state of the art on ADE20K (50.28% mIoU), Pascal Context (55.83% mIoU) and competitive results on Cityscapes. Particularly, we achieve the first (44.42% mIoU) position in the highly competitive ADE20K test server <a href="http://sceneparsing.csail.mit.edu/eval/leaderboard.php" target="_blank" rel="noopener noreferrer">leaderboard</a>.
+    </p>
+
+</div>
+
+<div class="row">
+    <br>
+    <img class="img-responsive center-block" alt="pipeline picture" src="./images/images_for_pub/setr-1.png" style="width:100%">
+    <br>
+    <img class="img-responsive center-block" alt="result picture1" src="./images/images_for_pub/setr-2.png" style="width:100%">
+    <br>
+    <img class="img-responsive center-block" alt="result picture2" src="./images/images_for_pub/setr-3.png" style="width:100%">
+    <br>
+    <img class="img-responsive center-block" alt="result picture3" src="./images/images_for_pub/setr-4.png" style="width:100%">
+    <br>
+    <img class="img-responsive center-block" alt="result picture4" src="./images/images_for_pub/setr-5.png" style="width:100%">
+</div></main><footer>Created by Zheyuan Zhou · <a href="#top-of-page">Back to top</a></footer></body></html>
