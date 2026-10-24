@@ -66,7 +66,7 @@ d. Install SETR.
 Instead, if you would like to install SETR in `dev` mode, run following
 
 ```shell
-git clone https://github.com/fudan-zvg/SETR.git
+git clone https://github.com/LogosIntelligenceLab/SETR.git
 cd SETR
 pip install -e .  # or "python setup.py develop"
 pip install -r requirements/optional.txt
@@ -94,7 +94,7 @@ conda activate open-mmlab
 
 conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
 pip install mmcv-full==1.2.2 -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.6.0/index.html
-git clone https://github.com/fudan-zvg/SETR.git
+git clone https://github.com/LogosIntelligenceLab/SETR.git
 cd SETR
 pip install -e .  # or "python setup.py develop"
 pip install -r requirements/optional.txt
@@ -116,7 +116,7 @@ conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
 set PATH=full\path\to\your\cpp\compiler;%PATH%
 pip install mmcv
 
-git clone https://github.com/fudan-zvg/SETR.git
+git clone https://github.com/LogosIntelligenceLab/SETR.git
 cd SETR
 pip install -e .  # or "python setup.py develop"
 pip install -r requirements/optional.txt
